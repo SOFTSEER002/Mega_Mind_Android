@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spalsh_background"
+    tools:context=".Activities.CustomActivity">
+
+    <Button
+        android:id="@+id/feedbackButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintRight_toRightOf="@+id/abacusMentalsTextTitle"
+        android:background="@drawable/feedback_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/abacusMentalsTextTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="15dp"
+        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/abacusMentalsTextTitle" />
+
+    <Button
+        android:id="@+id/selectLevel1"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="63pt"
+        android:background="@drawable/buttongrey_bg_image"
+        android:fontFamily="@font/avenirheavy"
+        android:text="Select skill"
+        android:textAllCaps="false"
+        android:textColor="@color/purplegrayish"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/topBarBlueHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topBarBlueHome"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/startCustomGamebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_bg_image"
+        android:fontFamily="@font/avenirheavy"
+        android:paddingBottom="12dp"
+        android:text="Start"
+        android:textAllCaps="false"
+        android:textColor="@color/grayishbrown"
+        android:textSize="21dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="305dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/topBarBlueHome">
+
+        <Button
+            android:id="@+id/level1btn"
+            android:layout_width="165dp"
+            android:layout_height="40dp"
+            android:background="@drawable/level_selection_button"
+            android:layout_margin="7dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/avenirbook"
+            android:text="Single Digit"
+            android:textAllCaps="false"
+            android:textColor="@color/grayishbrown" />
+
+        <Button
+            android:id="@+id/level2btn"
+            android:layout_width="165dp"
+            android:layout_height="40dp"
+            android:background="@drawable/level_selection_button"
+            android:layout_margin="7dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/avenirbook"
+            android:text="Double Digit"
+            android:textAllCaps="false"
+            android:textColor="@color/grayishbrown" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="307dp"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <Button
+            android:id="@+id/level3btn"
+            android:layout_width="165dp"
+            android:layout_height="40dp"
+            android:background="@drawable/level_selection_button"
+            android:layout_margin="7dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/avenirbook"
+            android:text="Triple Digit"
+            android:textAllCaps="false"
+            android:textColor="@color/grayishbrown" />
+
+        <Button
+            android:id="@+id/customButton"
+            android:layout_width="165dp"
+            android:layout_height="40dp"
+            android:background="@drawable/level_selection_button"
+            android:layout_margin="7dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/cobalt"
+            android:fontFamily="@font/avenirbook"
+            android:text="Custom"
+            android:textAllCaps="false"
+            android:textColor="@color/spalsh_background" />
+    </LinearLayout>
+
+
+    <!--    <LinearLayout-->
+<!--        android:id="@+id/linearLayout2"-->
+<!--        android:layout_width="305dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:weightSum="2"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/selectLevel">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/level1btn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/levelcustomrect_button"-->
+<!--            android:fontFamily="@font/avenirbook"-->
+<!--            android:text="Single Digit"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/grayishbrown" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/level2btn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="15dp"-->
+<!--            android:layout_marginRight="25dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/levelcustomrect_button"-->
+<!--            android:fontFamily="@font/avenirbook"-->
+<!--            android:text="Double Digit"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/grayishbrown" />-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linearLayout1"-->
+<!--        android:layout_width="318dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:weightSum="2"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/linearLayout2"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/level3btn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/levelcustomrect_button"-->
+<!--            android:fontFamily="@font/avenirbook"-->
+<!--            android:text="Triple Digit"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/grayishbrown" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/customButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="15dp"-->
+<!--            android:layout_marginRight="25dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/levelcustomrect_button"-->
+<!--            android:backgroundTint="@color/cobalt"-->
+<!--            android:fontFamily="@font/avenirbook"-->
+<!--            android:text="Custom"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/spalsh_background" />-->
+<!--    </LinearLayout>-->
+
+    <TextView
+        android:id="@+id/abacusMentalsTextTitle"
+        android:layout_width="250dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="50dp"
+        android:elevation="2dp"
+        android:fontFamily="@font/baloo"
+        android:gravity="center"
+        android:text="Megamind Abacus"
+        android:textColor="@android:color/white"
+        android:textSize="27sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topBarBlueHome" />
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="40dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:weightSum="4"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/selectLevel">-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/button10"-->
+    <!--            android:layout_width="49dp"-->
+
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="15dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@drawable/levelnumbercircle_button"-->
+    <!--            android:text="1" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/button9"-->
+    <!--            android:layout_width="49dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="15dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@drawable/levelnumbercircle_button"-->
+    <!--            android:text="2" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/button8"-->
+    <!--            android:layout_width="49dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="15dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@drawable/levelnumbercircle_button"-->
+    <!--            android:text="3" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/customButton"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="15dp"-->
+    <!--            android:layout_weight="3"-->
+    <!--            android:background="@drawable/levelcustomrect_button"-->
+    <!--            android:text="Custom" />-->
+    <!--    </LinearLayout>-->
+
+    <TextView
+        android:id="@+id/levelNoTextView"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/level_bg_image"
+        android:elevation="20dp"
+        android:fontFamily="@font/avenirheavy"
+        android:gravity="center"
+        android:text="Customise"
+        android:textColor="@color/black_zeplin"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/cardViewH"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewH"
+        app:layout_constraintStart_toStartOf="@+id/cardViewH"
+        app:layout_constraintTop_toTopOf="@+id/cardViewH"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/topBarBlueHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/topblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewH"
+        android:layout_width="381dp"
+        android:layout_height="240dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="302dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirbook"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="Digit Size"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#727070" />
+
+                <Spinner
+                    android:id="@+id/digitSizeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:dropDownWidth="300dp"
+                    android:overlapAnchor="false"
+                    android:popupBackground="@drawable/dropdownmenu_bg_image"
+                    android:popupTheme="@style/SpinnerDropDown" />
+                <!--                android:dropDownWidth="300dp"-->
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/GreyBackground"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="241dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirbook"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="No. of digits"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#727070" />
+
+                <Spinner
+                    android:id="@+id/noOfDigitsSpinner"
+                    android:layout_width="249dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:dropDownWidth="300dp"
+                    android:overlapAnchor="false"
+                    android:popupBackground="@drawable/dropdownmenu_bg_image"
+                    android:popupTheme="@style/SpinnerDropDown" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/avenirbook"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="Flickering Speed"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#727070" />
+
+
+<!--add minus here-->
+
+                <ImageView
+                    android:id="@+id/minusButton"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                   android:src="@drawable/speeddown_button" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/flickeringSpeedTextView"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="400"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/greyFontColour"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+<!--add plus here-->
+                <ImageView
+                    android:id="@+id/plusButton"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/speedup_button" />
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:background="@color/GreyBackground"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirbook"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="Subtractions"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#727070" />
+
+                <Switch
+                    android:id="@+id/subtractionSwitch"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|left"
+                    android:layout_weight="1.2" />
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

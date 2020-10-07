@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/login_icon"
+            android:title="Login"
+            android:visible="true" />
+        <item
+            android:id="@+id/practice"
+            android:icon="@drawable/practice_icon"
+            android:title="Practice"
+            android:visible="true" />
+        <item
+            android:id="@+id/feedback1"
+            android:icon="@drawable/feedback_ic"
+            android:title="Feedback"
+            android:visible="true" />
+        <item
+            android:id="@+id/assignment"
+            android:title="Assignments"
+            android:icon="@drawable/assignments_icon"
+            android:visible="true" />
+        <item
+            android:id="@+id/results"
+            android:icon="@drawable/results_icon"
+            android:title="Results"
+            android:visible="false" />
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/settings"
+            android:title="Settings"
+            android:visible="false" />
+
+    </group>
+    <group android:checkableBehavior="none">
+        <item
+            android:title=""
+            android:visible="true" />
+        <item
+            android:title=""
+            android:visible="true" />
+    </group>
+<group android:checkableBehavior="single">
+    <item
+        android:id="@+id/feedback"
+        android:icon="@drawable/feedback_ic"
+        android:title="Feedback"
+        android:visible="true" />
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/logout"
+        android:title="Logout"
+        android:visible="true" />
+</group>
+
+</menu>

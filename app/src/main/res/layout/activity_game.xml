@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+
+    android:background="@color/spalsh_background"
+    tools:context=".Activities.GameActivity">
+    <RelativeLayout
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.417"
+        android:id="@+id/text_gallery"
+        android:layout_marginTop="-10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="55dp"
+        android:background="@drawable/topbarblue_bgimage">
+
+        <TextView
+            android:id="@+id/headText"
+            android:layout_marginTop="-10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="false"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/baloo"
+            android:textSize="27sp"
+            android:textAlignment="center"
+            android:text="Megamind Abacus"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_centerInParent="true"
+        android:id="@+id/flickeringGameBg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64"
+        app:srcCompat="@drawable/flickeringnumber_bgimage" />
+
+    <ProgressBar
+        android:layout_centerHorizontal="true"
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="265dp"
+        android:layout_height="9dp"
+        android:progressBackgroundTint="#3699D5"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="58dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flickeringGameBg"
+        app:layout_constraintVertical_bias="0.949" />
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:id="@+id/numberDisplayGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/avenirheavy"
+        android:textColor="@android:color/white"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toBottomOf="@+id/flickeringGameBg"
+        app:layout_constraintEnd_toEndOf="@+id/flickeringGameBg"
+        app:layout_constraintStart_toStartOf="@+id/flickeringGameBg"
+        app:layout_constraintTop_toTopOf="@+id/flickeringGameBg" />
+
+</RelativeLayout>

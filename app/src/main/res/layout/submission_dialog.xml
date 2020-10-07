@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="250dp"
+    android:gravity="center_horizontal|center_vertical"
+    android:layout_gravity="center_horizontal|center_vertical"
+    android:layout_height="wrap_content"
+    android:minHeight="100dp"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical"
+    tools:context="com.doozycod.megamind.Fragments.FeedbackFragment">
+
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/avenirmedium"
+            android:text="Submitted!"
+            android:textColor="#000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/avenirlight"
+            android:textColor="@color/grayishbrown"
+            android:text="Thank you for your feedback" />
+
+
+
+</LinearLayout>

@@ -1,0 +1,270 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.doozycod.megamind.Fragments.AssignmentGet">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="75dp"
+                    android:background="@drawable/level_bg_image"
+                    android:fontFamily="@font/avenirheavy"
+                    android:text="Assignment"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#585858" />
+
+                <RelativeLayout
+                    android:id="@+id/text_gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/topbluebottom">
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/avenirheavy"
+                android:text="Objective:" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/avenirlight"
+                android:text="Follow each number sequence and its operators that appear on screen." />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/assignmentType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:background="@drawable/level_bg_image"
+                    android:elevation="20dp"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="center"
+                    android:text="Addition"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black_zeplin"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewH"
+                    android:layout_width="376dp"
+                    android:layout_height="250dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp">
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="302dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/avenirbook"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="10dp"
+                                android:text="Digit Size"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="#727070" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/digitSizeTxt"
+                                android:layout_width="302dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:fontFamily="@font/avenirheavy"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:paddingLeft="10dp"
+                                android:text="5"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@color/greyFontColour"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/GreyBackground"
+                            android:orientation="horizontal"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:weightSum="2">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/digitNoTxt"
+                                android:layout_width="241dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/avenirbook"
+                                android:gravity="center_vertical"
+                                android:padding="10dp"
+                                android:text="Number of Digits"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="#727070" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/noOfDigitsAssignment"
+                                android:layout_width="130dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/avenirheavy"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:paddingLeft="10dp"
+                                android:text="5"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@color/greyFontColour"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="200dp"
+                                android:layout_height="match_parent"
+
+                                android:fontFamily="@font/avenirbook"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="10dp"
+                                android:text="Flickering speed"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="#727070" />
+                            <!--add minus here-->
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/flickeringSpeedTextView"
+                                android:layout_width="90dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/avenirheavy"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="400"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@color/greyFontColour"
+                                android:textSize="18dp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="left"
+                            android:background="@color/GreyBackground"
+                            android:orientation="horizontal"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:weightSum="2">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="200dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/avenirbook"
+                                android:gravity="center_vertical"
+                                android:padding="10dp"
+                                android:text="Total questions"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="#727070" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/noOfQuestionsAssignment"
+                                android:layout_width="90dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/avenirheavy"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:paddingLeft="10dp"
+                                android:text="5"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@color/greyFontColour"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/startButtonAssignment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/button_bg_image"
+            android:fontFamily="@font/avenirheavy"
+            android:paddingBottom="12dp"
+            android:text="Start"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="21dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </RelativeLayout>
+
+
+</FrameLayout>

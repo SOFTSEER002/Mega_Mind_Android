@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll_layout_assign"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/spalsh_background"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingRight="15dp"
+    android:paddingLeft="15dp"
+    tools:context=".Activities.MainNavigation">
+<androidx.cardview.widget.CardView
+    android:layout_gravity="center_vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp">
+    <ImageView
+        android:id="@+id/cal_image"
+        android:src="@drawable/assignments_multiplication_icon"
+        android:layout_width="38dp"
+        android:layout_height="38dp" />
+</androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingLeft="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/assignmentType"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:fontFamily="@font/avenirheavy"
+            android:text="Multiplication"
+            android:textColor="@color/purplegrayish"/>
+        <TextView
+            android:id="@+id/assignmentDate"
+            android:layout_width="match_parent"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/greyFontColor"
+            android:layout_height="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:fontFamily="@font/avenirmedium"
+            android:text="07 Oct 2019 to 14 Oct 2019"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/percentageResult"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/info_icon"
+        android:gravity="center_horizontal|center_vertical"
+        android:text=""
+        android:textSize="14dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/avenirheavy"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topbarGreenResults" />
+
+</LinearLayout>

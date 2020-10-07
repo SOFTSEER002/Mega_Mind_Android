@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ResultActivity">
+
+    <TextView
+        android:id="@+id/resultsTextTitle"
+        android:layout_width="291dp"
+        android:layout_height="103dp"
+        android:elevation="0.1dp"
+        android:fontFamily="@font/baloo"
+        android:gravity="center"
+        android:text="Megamind Abacus Results"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/topbarGreenResults"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topbarGreenResults"
+        app:layout_constraintVertical_bias="0.359" />
+
+    <TextView
+        android:id="@+id/levelNoTextView3"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/level_bg_image"
+        android:elevation="20dp"
+        android:fontFamily="@font/avenirheavy"
+        android:gravity="center"
+        android:text="Level 1"
+        android:textColor="@color/grayishbrown"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/cardViewH"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewH"
+        app:layout_constraintStart_toStartOf="@+id/cardViewH"
+        app:layout_constraintTop_toTopOf="@+id/cardViewH"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/topbarGreenResults"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/topbarblue_bgimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewH"
+        android:layout_width="384dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="25dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/percentageTopLabel">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="Total Questions"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#727070" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/totalQuestionsTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="Single Digit"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/greyFontColour"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/GreyBackground"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="Correct Answers"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#727070" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/correctAnswerTextview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="5"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/greyFontColour"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="Wrong Answers"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#727070" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/wrongAnswerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="500ms"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/greyFontColour"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/GreyBackground"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="Percentage"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#727070" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/percentageTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="Yes"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/greyFontColour"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_bg_image"
+            android:paddingBottom="12dp"
+            android:text="Back"
+            android:textAllCaps="false"
+            android:textColor="@color/grayishbrown"
+            android:textSize="21dp"
+            />
+
+        <Button
+            android:id="@+id/nextQuestionResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_bg_image"
+            android:paddingBottom="12dp"
+            android:text="Start Again"
+            android:textAllCaps="false"
+            android:textColor="@color/grayishbrown"
+            android:textSize="21dp" />
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/percentageTopLabel"
+        android:layout_width="143dp"
+        android:layout_height="133dp"
+        android:layout_marginTop="116dp"
+        android:background="@drawable/resultpercentage"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="XX%"
+        android:textColor="@android:color/white"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topbarGreenResults" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

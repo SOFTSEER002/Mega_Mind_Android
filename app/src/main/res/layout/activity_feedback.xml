@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Activities.FeedbackActivity">
+
+    <TextView
+        android:id="@+id/levelNoTextView2"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/level_bg_image"
+        android:elevation="20dp"
+        android:fontFamily="@font/avenirheavy"
+        android:gravity="center"
+        android:text="Description"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="8pt"
+        app:layout_constraintBottom_toBottomOf="@+id/cardViewH"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewH"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="@+id/cardViewH"
+        app:layout_constraintTop_toTopOf="@+id/cardViewH"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/topBarBlueHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/topblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/abacusMentalsTextTitle"
+        android:layout_width="238dp"
+        android:layout_height="61dp"
+        android:fontFamily="@font/baloo"
+        android:gravity="center"
+        android:layout_marginBottom="15dp"
+        android:text="Feedback"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/topBarBlueHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topBarBlueHome" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewR"
+        android:layout_width="match_parent"
+        android:layout_height="217dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBarBlueHome"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="256dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/feedbackname_icon"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/avenirbook"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="Name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="#727070" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/nameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirmedium"
+                    android:gravity="center_vertical"
+                    android:inputType="textCapWords"
+                    android:padding="10dp"
+                    android:lines="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/greyFontColour"
+                    android:textStyle="bold" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="256dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/feedbackemail_icon"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/avenirbook"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="Email"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="#727070" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/emailET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirmedium"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:lines="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/greyFontColour"
+                    android:textStyle="bold" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="256dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/feedbackphone_icon"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/avenirbook"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="Phone"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="#727070" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/phoneET"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirmedium"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:lines="1"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/greyFontColour"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewH"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:elevation="1dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewR"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/descriptionET"
+                    android:layout_width="326dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/cardview_dark_background"
+                    android:fontFamily="@font/avenirmedium"
+                    android:gravity="center_vertical"
+                    android:hint="Type here"
+                    android:inputType="textCapSentences"
+                    android:padding="10dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="#727070"
+                    android:textStyle="italic"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/submitFeedbackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_bg_image"
+        android:fontFamily="@font/avenirheavy"
+        android:paddingBottom="12dp"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/grayishbrown"
+        android:textSize="21dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <Button
+        android:id="@+id/backButtonFeedback"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/back_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/topBarBlueHome"
+        app:layout_constraintEnd_toStartOf="@+id/abacusMentalsTextTitle"
+        app:layout_constraintHorizontal_bias="0.612"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topBarBlueHome"
+        app:layout_constraintVertical_bias="0.506" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

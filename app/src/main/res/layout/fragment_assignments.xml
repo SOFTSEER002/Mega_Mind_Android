@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Fragments.AssignmentsFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/mainsLay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/getNewAssignmentsFragButton"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="75dp"
+                    android:background="@drawable/level_bg_image"
+                    android:fontFamily="@font/avenirheavy"
+                    android:text="Assignments"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#585858" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/topbluebottom">
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtPendingAssignments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Good Job! You have completed all assignments for current week"
+            android:textAlignment="center"
+            android:textColor="@color/buttonlabelcolor"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/staticText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="dummy text,dummy text dummy text\n you are unauthorized"
+            android:textAlignment="center"
+            android:textColor="@color/buttonlabelcolor"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/getNewAssignmentsFragButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/button_bg_image"
+            android:fontFamily="@font/avenirheavy"
+            android:paddingBottom="12dp"
+            android:text="Get new assignments"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="21dp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/topbluebottom">
+    </RelativeLayout>
+    <Button
+        android:layout_marginTop="75dp"
+        android:layout_width="250dp"
+        android:id="@+id/resume"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/level_bg_image"
+        android:fontFamily="@font/avenirheavy"
+        android:text="Resume Assingment ?"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#000" />
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/resume"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/continueAssignmentBtn"
+            android:src="@drawable/correct"
+            android:layout_width="120dp"
+            android:layout_height="58dp"/>
+        <ImageView
+            android:id="@+id/noAssignmentBtn"
+            android:src="@drawable/wrong"
+            android:layout_width="120dp"
+            android:layout_height="58dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Activities.EnterAnswer">
+
+    <RelativeLayout
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.417"
+        android:id="@+id/text_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="55dp"
+        android:background="@drawable/topbarblue_bgimage">
+
+        <TextView
+            android:id="@+id/headText"
+            android:layout_marginTop="-10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="false"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/baloo"
+            android:textSize="27sp"
+            android:textAlignment="center"
+            android:text="Megamind Abacus"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_below="@id/editTextAnswer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:id="@+id/submitResult2"
+        android:layout_width="151dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttongrey_bg_image"
+        android:fontFamily="@font/avenirheavy"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/purplegrayish"
+        android:textSize="21dp" />
+
+    <EditText
+        android:layout_centerInParent="true"
+        android:id="@+id/editTextAnswer"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/GreyBackground"
+        android:elegantTextHeight="false"
+        android:elevation="0.1dp"
+        android:ems="10"
+        android:fontFamily="@font/avenirlight"
+        android:hint="Answer"
+        android:imeOptions="actionGo"
+        android:textStyle="italic"
+        android:inputType="textPhonetic"
+        android:digits="-1234567890"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textColorHighlight="@color/GreyBackground"
+        android:textColorHint="@color/GreyBackground"
+        android:textColorLink="@color/GreyBackground"
+        android:textSize="30sp"/>
+<RelativeLayout
+    android:layout_centerInParent="true"
+    android:id="@+id/flickeringGameBg2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/flickeringnumber_bgimage">
+
+</RelativeLayout>
+
+</RelativeLayout>

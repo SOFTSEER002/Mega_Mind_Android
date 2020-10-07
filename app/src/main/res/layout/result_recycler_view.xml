@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/resultQuestionNo"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/level_bg_image"
+        android:elevation="20dp"
+        android:fontFamily="@font/avenirheavy"
+        android:gravity="center"
+        android:text="Question 1"
+        android:textColor="@color/grayishbrown"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/cardViewH"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewH"
+        app:layout_constraintStart_toStartOf="@+id/cardViewH"
+        app:layout_constraintTop_toTopOf="@+id/cardViewH"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/right"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/correct"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/wrong"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/wrong"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:minHeight="100dp"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:minHeight="50dp"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/resultsNumbersArray"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirbook"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Numbers"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#727070" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/resultCorrectAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="right|center_vertical"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Correct Answer"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rightsideCardViewColor" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/GreyBackground"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/yourAnswerLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="Your Answer"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rightsideCardViewColor" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/resultUsersAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="right|center_vertical"
+                    android:padding="10dp"
+                    android:text="User's Answer"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rightsideCardViewColor" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirbook"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="Result"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#727070" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/calculateResultTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="right|center_vertical"
+                    android:padding="10dp"
+                    android:text="Result/10"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rightsideCardViewColor" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirbook"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="Total Questions"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#727070" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/totalQuestionsTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="right|center_vertical"
+                    android:padding="10dp"
+                    android:text="10"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rightsideCardViewColor" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

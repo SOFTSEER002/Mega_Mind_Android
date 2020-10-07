@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spalsh_background"
+    android:fitsSystemWindows="true"
+    tools:context=".Activities.WrongActivity">
+
+    <TextView
+        android:id="@+id/powerTypeWrongTxt"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/level_bg_image"
+        android:elevation="20dp"
+        android:fontFamily="@font/avenirheavy"
+        android:gravity="center"
+        android:text="Addition"
+        android:textColor="@color/purplegrayish"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardViewH"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewH"
+        app:layout_constraintStart_toStartOf="@+id/cardViewH"
+        app:layout_constraintTop_toTopOf="@+id/cardViewH"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/selectLevel"
+        android:layout_width="151dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="116dp"
+        android:background="@drawable/resultsincorrect_image"
+        android:textAllCaps="false"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/seeresults"
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/button_bg_image"
+        android:paddingBottom="12dp"
+        android:text="See Results"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="21sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/nextQuestionResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/button_bg_image"
+        android:fontFamily="@font/avenirheavy"
+        android:paddingBottom="12dp"
+        android:text="Try again"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="21dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/abacusMentalsTextTitle"
+        android:layout_width="248dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="56dp"
+        android:elevation="0.1dp"
+        android:fontFamily="@font/baloo"
+        android:gravity="center"
+        android:text="Incorrect!"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/selectLevel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topBarBlueHome" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/topbarGreenResults"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/topbarred_bg_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:minHeight="180dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectLevel"
+        app:layout_constraintVertical_bias="0.11">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/GreyBackground"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="20dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Subtractions"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#727070" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/subtractionValue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="No"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/greyFontColour"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="150dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="70dp"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/numbersArrayTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirbook"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Power exercise for"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#727070" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/powerWrongTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="right|center_vertical"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Wrong Answer"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rightsideCardViewColor"
+                    app:fontFamily="@font/avenirheavy" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/GreyBackground"
+                android:minHeight="45dp"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="Start from"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rightsideCardViewColor"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/powerWrongStartFromTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="right|center_vertical"
+                    android:padding="10dp"
+                    android:text="Wrong Answer"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rightsideCardViewColor" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:minHeight="45dp"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/yourAnswerLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="Time"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rightsideCardViewColor"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/powerWrongTimeTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="right|center_vertical"
+                    android:padding="10dp"
+                    android:text="Wrong Answer"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rightsideCardViewColor" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/GreyBackground"
+                android:minHeight="50dp"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirbook"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="Answer"
+                    android:textColor="@color/rightsideCardViewColor"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/answerPowerWrongTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="right|center_vertical"
+                    android:padding="10dp"
+                    android:text="Result/10"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rightsideCardViewColor" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="Count"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rightsideCardViewColor"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/countWrongTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="right|center_vertical"
+                    android:padding="10dp"
+                    android:text="-"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rightsideCardViewColor" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirbook"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="Questions"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#727070" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/totalQuestionsTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/avenirheavy"
+                    android:gravity="right|center_vertical"
+                    android:padding="10dp"
+                    android:text="10"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rightsideCardViewColor" />
+
+            </LinearLayout>
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:paddingStart="20dp"-->
+            <!--                android:paddingEnd="20dp">-->
+
+            <!--                <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:gravity="center_vertical"-->
+            <!--                    android:padding="10dp"-->
+            <!--                    android:text="Flickering Speed"-->
+            <!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+            <!--                    android:textColor="#727070" />-->
+
+            <!--                <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_weight="1.2"-->
+            <!--                    android:gravity="center_vertical"-->
+            <!--                    android:padding="10dp"-->
+            <!--                    android:text="500ms"-->
+            <!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+            <!--                    android:textColor="@color/greyFontColour"-->
+            <!--                    android:textStyle="bold" />-->
+
+            <!--            </LinearLayout>-->
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:background="@color/GreyBackground"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:paddingStart="20dp"-->
+            <!--                android:paddingEnd="20dp">-->
+
+            <!--                <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:gravity="center_vertical"-->
+            <!--                    android:padding="10dp"-->
+            <!--                    android:text="Subtractions"-->
+            <!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+            <!--                    android:textColor="#727070" />-->
+
+            <!--                <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_weight="1.2"-->
+            <!--                    android:gravity="center_vertical"-->
+            <!--                    android:padding="10dp"-->
+            <!--                    android:text="Yes"-->
+            <!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+            <!--                    android:textColor="@color/greyFontColour"-->
+            <!--                    android:textStyle="bold" />-->
+
+            <!--            </LinearLayout>-->
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/nextQuestionResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewH"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/tryAgainWrongButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_bg_image"
+            android:fontFamily="@font/avenirheavy"
+            android:paddingBottom="12dp"
+            android:text="Try again"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="21dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

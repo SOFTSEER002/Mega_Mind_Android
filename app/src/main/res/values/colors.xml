@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2150A2</color>
+    <color name="colorPrimaryDark">#31599F</color>
+    <color name="colorAccent">#C2C2C2</color>
+
+    <color name="GreyBackground">#EDEDED</color>
+    <color name="greyFontColour">#939393</color>
+    <color name="greyFontColor">#939393</color>
+    <color name="levelButtonFontColor">#212121</color>
+    <color name="spalsh_background">#FEFDFF</color>
+    <color name="rightsideCardViewColor">#3E3E3E</color>
+    <color name="purplegrayish">#69666C</color>
+    <color name="buttonlabelcolor">#21201E</color>
+    <color name="grayishbrown">#3E3E3E</color>
+    <color name="black_zeplin">#21201E</color>
+    <color name="cobalt">#2150A2</color>
+    <color name="white">#FFFFFF</color>
+    <color name="recycler_items">#EDEDED</color>
+    <color name="progress_bar_tint">#3699D5</color>
+</resources>

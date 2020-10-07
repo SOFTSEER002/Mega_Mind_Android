@@ -1,0 +1,291 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.doozycod.megamind.Fragments.SettingsFragment">
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/topbluebottom">
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/headText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="false"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/baloo"
+                    android:textSize="27sp"
+                    android:textAlignment="center"
+                    android:text="Megamind"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:layout_marginTop="-20dp"
+                    android:layout_below="@id/headText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/baloo"
+                    android:textSize="27sp"
+                    android:textAlignment="center"
+                    android:text="Abacus"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="75dp"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/level_bg_image">
+                <com.doozycod.megamind.Utils.AutoResizeTextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/avenirheavy"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="KJones"
+                    android:id="@+id/studentName"
+                    android:textColor="#585858" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewH"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:padding="10dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/username_icon"
+                    android:drawablePadding="12dp"
+                    android:fontFamily="@font/avenirmedium"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/greyFontColor"
+                    android:text="Screen Name" />
+
+                <EditText
+                    android:id="@+id/s_name"
+                    android:textColor="@color/grayishbrown"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:paddingLeft="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirmedium"
+                    android:hint="Purple Dinosaur"
+                    android:text="Purple Dinosaur"
+                    android:inputType="text"
+                    android:digits="0123456789qwertzuiopasdfghjklyxcvbnm QWERTYUIOPLKJHGFDSAZCVBNM"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/GreyBackground"
+                android:padding="10dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/assignments_icon"
+                    android:drawablePadding="12dp"
+                    android:fontFamily="@font/avenirmedium"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/greyFontColour"
+                    android:text="Assignment Day" />
+
+                <TextView
+                    android:id="@+id/assignmentDayTxt"
+                    android:textColor="@color/grayishbrown"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/avenirmedium"
+                    android:text="Day"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#fff"
+                android:padding="11dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/password_icon"
+                    android:drawablePadding="15dp"
+                    android:paddingLeft="4dp"
+                    android:fontFamily="@font/avenirmedium"
+                    android:gravity="center_vertical"
+                    android:text="New Password" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight=".99"
+                    android:paddingLeft="20dp"
+                    android:background="#fff"
+                    android:fontFamily="@font/avenirmedium"
+                    android:hint="*****"
+                    android:inputType="textPassword"
+                    android:maxLines="1" />
+                <Button
+                    android:layout_weight="0.01"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/hide_icon"
+                    />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:background="#D5D5D5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#fff"
+                android:padding="11dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/password_icon"
+                    android:drawablePadding="15dp"
+                    android:paddingLeft="4dp"
+                    android:fontFamily="@font/avenirmedium"
+                    android:gravity="center_vertical"
+                    android:text="Retype password"/>
+
+                <EditText
+                    android:id="@+id/userPassword"
+                    android:paddingLeft="20dp"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight=".99"
+                    android:background="#fff"
+                    android:fontFamily="@font/avenirmedium"
+                    android:hint="*****"
+                    android:inputType="textPassword"
+                    android:maxLines="1" />
+                <Button
+                    android:id="@+id/visible_password"
+                    android:layout_weight="0.01"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/hide_icon"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+        <Button
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/updateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/button_bg_image"
+            android:fontFamily="@font/avenirheavy"
+            android:paddingBottom="12dp"
+            android:text="Update"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="21dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </RelativeLayout>
+
+</FrameLayout>
