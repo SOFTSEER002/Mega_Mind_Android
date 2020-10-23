@@ -2,6 +2,7 @@ package com.doozycod.megamind.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -40,16 +41,32 @@ public class PowerGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_power_game);
         startService(new Intent(this, BroadcastService.class));
-        Log.e("TAG", "Started service");
+//        Log.e("TAG", "Started service");
         timer = findViewById(R.id.timer);
         numberPowerGame = findViewById(R.id.numberPowerGame);
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
-        final PowerManager.WakeLock wl = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "My Tag");
+
+
+        int time = getIntent().getIntExtra("seconds", 60);
+        String temp = "";
+        if (time == 60) {
+            temp = 1 + " minute";
+        }
+        if (time == 120) {
+            temp = 2 + " minutes";
+        }
+        @SuppressLint("InvalidWakeLockTag") final PowerManager.WakeLock wl = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "My Tag");
+
         if (getIntent().getStringExtra("powerType").equals("Addition")) {
-            numberPowerGame.setText("+" + getIntent().getIntExtra("random", 0) + "");
+            numberPowerGame.setText("Starting from " + getIntent().getStringExtra("startForm")
+                    + ", keep adding " + getIntent().getIntExtra("random", 0) + " For "
+                    + temp);
         }
         if (getIntent().getStringExtra("powerType").equals("Subtraction")) {
-            numberPowerGame.setText("-" + getIntent().getIntExtra("random", 0));
+//            numberPowerGame.setText("-" + getIntent().getIntExtra("random", 0));
+            numberPowerGame.setText("Starting from " + getIntent().getStringExtra("startForm")
+                    + ", keep on subtracting " + getIntent().getIntExtra("random", 0) + " For "
+                    + temp);
         }
         if (getIntent().getIntExtra("seconds", 60) == 60) {
             count = 60000;
@@ -63,8 +80,7 @@ public class PowerGameActivity extends AppCompatActivity {
         }
         new CountDownTimer(count, delay) { // adjust the milli seconds here
             public void onTick(long millisUntilFinished) {
-                timer.setText("" + String.format("%d min : %d sec",
-
+                timer.setText("" + String.format("%d:%d\n sec",
                         TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
                         TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) -
                                 TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));

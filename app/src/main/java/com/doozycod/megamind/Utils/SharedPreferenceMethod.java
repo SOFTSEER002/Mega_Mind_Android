@@ -23,6 +23,12 @@ public class SharedPreferenceMethod {
         sp_editior.commit();
 
     }
+    public void insertQuestions(String noOfQuestions){
+        sp = context.getSharedPreferences("Megamind_PREF", Context.MODE_PRIVATE);
+        SharedPreferences.Editor sp_editior = sp.edit();
+        sp_editior.putString("noOfQuestions", noOfQuestions);
+        sp_editior.commit();
+    }
     public void saveUserDetails(String id, String mCode, String name, String screenName , String level,String assignmentDay) {
         sp = context.getSharedPreferences("Megamind_PREF", Context.MODE_PRIVATE);
         SharedPreferences.Editor sp_editior = sp.edit();

@@ -100,7 +100,7 @@ public class AllResultFragment extends Fragment {
         progressBar = new CustomProgressBar(getActivity());
         sharedPreferenceMethod = new SharedPreferenceMethod(getActivity());
         if (mListener != null) {
-            mListener.onFragmentInteraction("Megamind Abacus");
+            mListener.onFragmentInteraction("Megamind\nAbacus Practice");
         }
         // Inflate the layout for this fragment
         int totalCorrect = 0;

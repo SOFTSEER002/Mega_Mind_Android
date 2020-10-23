@@ -77,7 +77,7 @@ public class SettingsFragment extends Fragment {
         assignmentDayTxt = v.findViewById(R.id.assignmentDayTxt);
         sharedPreferenceMethod = new SharedPreferenceMethod(getActivity());
         if (mListener != null) {
-            mListener.onFragmentInteraction("Megamind Abacus");
+            mListener.onFragmentInteraction("Megamind\nAbacus Practice");
         }
 
         // Inflate the layout for this fragment

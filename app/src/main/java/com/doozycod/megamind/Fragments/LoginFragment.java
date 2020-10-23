@@ -161,7 +161,7 @@ public class LoginFragment extends Fragment {
                                     android.R.animator.fade_out,
                                     android.R.animator.fade_in,
                                     android.R.animator.fade_out)
-                            .remove(new LoginFragment()).replace(R.id.nav_host_fragment, new AssignmentsFragment())
+                            .remove(new LoginFragment()).replace(R.id.nav_host_fragment, new PracticeFragment())
                             .commit();
                 } else {
                     if (response.code() == 400) {

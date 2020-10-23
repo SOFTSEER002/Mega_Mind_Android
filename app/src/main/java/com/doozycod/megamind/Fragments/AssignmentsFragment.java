@@ -96,7 +96,7 @@ public class AssignmentsFragment extends Fragment {
         databaseHelper = new DatabaseHelper(getActivity());
         apiService = ApiUtils.getAPIService();
         if (mListener != null) {
-            mListener.onFragmentInteraction("Megamind Abacus");
+            mListener.onFragmentInteraction("Megamind\nAbacus Practice");
         }
 
         getNewAssignmentsFragButton.setOnClickListener(new View.OnClickListener() {

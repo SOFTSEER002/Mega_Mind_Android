@@ -143,13 +143,30 @@ public class CorrectActivity extends AppCompatActivity {
             } else {
                 result.setText((totalCorrect1) + "/" + sharedPreferenceMethod.getQuestions());
             }
-            if (questionNo == Integer.parseInt(sharedPreferenceMethod.getQuestions())) {
+            if (getIntent().hasExtra("assignmentAnswer")) {
+                if (questionNo == Integer.parseInt(sharedPreferenceMethod.getQuestions()) && questionNo != 1) {
+                    seeresults.setVisibility(View.VISIBLE);
+                    nextQuestion.setVisibility(View.INVISIBLE);
+                    quitButton.setVisibility(View.VISIBLE);
+                    prefs.edit().remove("questions").apply();
+
+                }
+            } else {
+                if (50 == Integer.parseInt(sharedPreferenceMethod.getQuestions())) {
+                    seeresults.setVisibility(View.VISIBLE);
+                    nextQuestion.setVisibility(View.INVISIBLE);
+                    quitButton.setVisibility(View.VISIBLE);
+                    prefs.edit().remove("questions").apply();
+
+                }
+            }
+           /* if (questionNo == 50 *//*Integer.parseInt(sharedPreferenceMethod.getQuestions())*//*) {
                 seeresults.setVisibility(View.VISIBLE);
                 nextQuestion.setVisibility(View.INVISIBLE);
                 quitButton.setVisibility(View.INVISIBLE);
                 prefs.edit().remove("questions").apply();
 
-            }
+            }*/
         }
 
 
@@ -304,6 +321,7 @@ public class CorrectActivity extends AppCompatActivity {
         nextQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent
                         (CorrectActivity.this,
                                 GameActivity.class);
@@ -311,6 +329,9 @@ public class CorrectActivity extends AppCompatActivity {
                     intent.putExtra("assignment", "assignment");
                     assignmentProperity(intent);
                 } else {
+
+                    int noQuestion= Integer.parseInt(sharedPreferenceMethod.getQuestions())+1;
+                    sharedPreferenceMethod.insertQuestions(noQuestion+"");
                     assignmentProperity(intent);
                 }
                 startActivity(intent);

@@ -15,9 +15,9 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            android:paddingTop="10dp"
+            android:paddingTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="95dp"
             android:background="@drawable/topblue"
             android:minHeight="?attr/actionBarSize"
             app:popupTheme="@style/AppTheme.PopupOverlay">
@@ -27,7 +27,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|top"
                     android:fontFamily="@font/baloo"
-                    android:text="Megamind Abacus"
+                    android:gravity="center"
+                    android:text="Megamind \nAbacus Practice"
                     android:textColor="@android:color/white"
                     android:textSize="27sp"
                     android:visibility="visible" />
@@ -37,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|top"
                 android:fontFamily="@font/baloo"
-                android:text="Megamind Abacus"
+                android:text="Megamind \nAbacus Practice"
                 android:textColor="@android:color/white"
                 android:textSize="27sp"
                 android:visibility="gone" />

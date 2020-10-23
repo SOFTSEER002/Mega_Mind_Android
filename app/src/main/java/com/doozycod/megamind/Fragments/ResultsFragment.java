@@ -89,11 +89,12 @@ public class ResultsFragment extends Fragment {
                 if (databaseHelper != null) {
                     databaseHelper.deleteTable();
                 }
-                mCallbackListener.mCallbackListener(true);
                 Intent setIntent = new Intent(getActivity(), MainNavigation.class);
                 setIntent.putExtra("practice", "answer");
                 startActivity(setIntent);
                 getActivity().finishAffinity();
+                mCallbackListener.mCallbackListener(true);
+
             }
         });
         int totalCorrect = 0;

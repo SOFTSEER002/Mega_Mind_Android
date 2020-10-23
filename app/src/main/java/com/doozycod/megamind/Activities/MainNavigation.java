@@ -46,7 +46,6 @@ import com.doozycod.megamind.Utils.SharedPreferenceMethod;
 import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONObject;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -276,7 +275,7 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
                 if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
                     drawerLayout.closeDrawer(GravityCompat.START);
                 }
-                headText.setText("Megamind Abacus");
+                headText.setText("Megamind\nAbacus Practice");
                 headText.setVisibility(View.VISIBLE);
                 headText2.setVisibility(View.GONE);
                 getFragmentManager().beginTransaction().setCustomAnimations(android.R.animator.fade_in,
@@ -363,7 +362,7 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
 
 //        } else {
         navigationView.setCheckedItem(R.id.assignment);
-        getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new AssignmentsFragment(), "FragmentAssignment").commit();
+        getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new PracticeFragment(), "FragmentAssignment").commit();
 //        }
 
     }
@@ -408,7 +407,7 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
                     drawerLayout.closeDrawer(GravityCompat.START);
                 }
                 getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new LoginFragment()).commit();
-                headText.setText("Megamind Abacus");
+                headText.setText("Megamind\nAbacus Practice");
                 headText.setVisibility(View.VISIBLE);
                 headText2.setVisibility(View.GONE);
 //                headText2.setText("Results");
@@ -419,7 +418,7 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
                 if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
                     drawerLayout.closeDrawer(GravityCompat.START);
                 }
-                headText2.setText("Megamind Abacus");
+                headText2.setText("Megamind\nAbacus Practice");
                 headText2.setVisibility(View.VISIBLE);
                 headText.setVisibility(View.GONE);
                 sharedPreferenceMethod.saveOnResultClick("");
@@ -440,7 +439,7 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
                         android.R.animator.fade_out,
                         android.R.animator.fade_in,
                         android.R.animator.fade_out).replace(R.id.nav_host_fragment, new PracticeFragment()).addToBackStack("Practice").commit();
-                headText.setText("Megamind Abacus");
+                headText.setText("Megamind\nAbacus Practice");
                 headText.setVisibility(View.VISIBLE);
                 headText2.setVisibility(View.GONE);
 
@@ -481,7 +480,7 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
                         android.R.animator.fade_out,
                         android.R.animator.fade_in,
                         android.R.animator.fade_out).replace(R.id.nav_host_fragment, new FeedbackFragment()).addToBackStack("Feedback").commit();
-                headText.setText("Megamind Abacus");
+                headText.setText("Megamind\nAbacus Practice");
                 headText.setVisibility(View.VISIBLE);
                 headText2.setVisibility(View.GONE);
             }
@@ -596,7 +595,7 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
 
     @Override
     public void mCallbackListener(boolean result) {
-        headText.setText("Megamind Abacus");
+        headText.setText("Megamind\nAbacus Practice");
         headText.setVisibility(View.VISIBLE);
         headText2.setVisibility(View.GONE);
     }

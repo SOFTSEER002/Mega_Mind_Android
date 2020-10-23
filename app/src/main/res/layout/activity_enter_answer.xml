@@ -28,7 +28,7 @@
             android:fontFamily="@font/baloo"
             android:textSize="27sp"
             android:textAlignment="center"
-            android:text="Megamind Abacus"
+            android:text="Megamind \nAbacus Practice"
             android:textColor="@android:color/white" />
 
     </RelativeLayout>

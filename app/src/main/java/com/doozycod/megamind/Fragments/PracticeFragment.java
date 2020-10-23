@@ -67,7 +67,7 @@ public class PracticeFragment extends Fragment {
     DatabaseHelper dbHelper;
     LinearLayout powerDialogLayout, digitSizeDialogLayout, digitSizeDivsorDialogLayout;
     OnNavigation navigation;
-    private String digitSizeDivisor="";
+    private String digitSizeDivisor = "";
 
     public void setmListener(OnNavigation mListener) {
         this.navigation = mListener;
@@ -148,7 +148,7 @@ public class PracticeFragment extends Fragment {
         initUI(root);
 //          set title
         if (mListener != null) {
-            mListener.onFragmentInteraction("Megamind Abacus");
+            mListener.onFragmentInteraction("Megamind\nAbacus Practice");
         }
         sharedPreferenceMethod = new SharedPreferenceMethod(getContext());
         dbHelper = new DatabaseHelper(getActivity());
@@ -602,7 +602,7 @@ public class PracticeFragment extends Fragment {
                 } else {
                     digitSizeSelected = String.valueOf(digitSizeSpinnerDivisor.getSelectedItem());
                     String dSpinner = String.valueOf(noOfDigitsSpinner.getSelectedItem());
-                    String qSpinner = 50 + "";
+                    String qSpinner = 1 + "";
 
                     noOfDigitsInt = Integer.parseInt(dSpinner);
                     flickeringSpeed = Integer.parseInt(flickeringSpeedTextView.getText().toString());

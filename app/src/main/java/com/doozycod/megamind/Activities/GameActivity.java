@@ -7,8 +7,11 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -39,6 +42,12 @@ public class GameActivity extends AppCompatActivity {
     int num, rand, counter = 0;
     Random random;
     int digits = 0;
+    TextView numberType;
+    Button exitButton;
+    Handler handler;
+    Runnable runnable;
+    //    MyRunnable runnable;
+    private boolean killMe = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +61,8 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         sharedPreferenceMethod = new SharedPreferenceMethod(this);
         TextView number = findViewById(R.id.numberDisplayGame);
+        numberType = findViewById(R.id.numberType);
+        exitButton = findViewById(R.id.exitButton);
 
         Intent intent = getIntent();
         random = new Random();
@@ -79,14 +90,7 @@ public class GameActivity extends AppCompatActivity {
         Log.e("TAG", "digitSize: " + digitSize);
         if (/*(digitSize==-22)||*/(noOfDigits == -22)
                 || (flickeringSpeed == -22) || (subtraction == -22) || (levelNumber == -22)) {
-//            editor.putInt("digitSize", dSize);
-//            editor.putInt("noOfDigits", noOfD);
-//            editor.putInt("flickeringSpeed", fSpeed);
-//            editor.putInt("subtraction", sub);
-//            editor.putInt("levelNumber", levelN);
-//            editor.apply();
-//            subtraction = sub;
-//            levelNumber = levelN;
+
         }
 //        new Handler(this.getMainLooper()).postDelayed(new Runnable() {
 //            @Override
@@ -95,6 +99,13 @@ public class GameActivity extends AppCompatActivity {
         /*Log.e("RUN", "run: " + sharedPreferenceMethod.getDivisorSize());
         numbersArray = getDivisionQuestion(digitSize, sharedPreferenceMethod.getDivisorSize());
         Log.e("RUN", "run11: " + num + "\n" + rand);*/
+        if (sharedPreferenceMethod.getType().equals("Subtraction")) {
+            numberType.setText("Addition");
+
+        } else {
+            numberType.setText(sharedPreferenceMethod.getType() + "");
+
+        }
 
         if (sharedPreferenceMethod.getType().equals("Division")) {
             numbersArray = new int[2];
@@ -114,13 +125,29 @@ public class GameActivity extends AppCompatActivity {
 //        }, 1500);
 
         int secondsDelayed = 1;
-        new Handler().postDelayed(new Runnable() {
+        handler = new Handler(Looper.getMainLooper());
+        runnable = new Runnable() {
             public void run() {
-                Game();
+                if (killMe)
+                    return;
+                else
+                    Game();
             }
-        }, secondsDelayed * 500);
+        };
+//        runnable;
+        handler.postDelayed(runnable, secondsDelayed * 500);
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                killMe = true;
+//                handler.removeCallbacks(null);
+                handler.removeCallbacks(runnable);
+                finish();
+            }
+        });
     }
+
 
     private void calculationMethod() {
 
@@ -475,7 +502,7 @@ public class GameActivity extends AppCompatActivity {
             }*/
 
             //Siva: New Method for division
-            if (sharedPreferenceMethod.getType().equals("Division")) {
+         /*   if (sharedPreferenceMethod.getType().equals("Division")) {
 
 
                 //Siva: Check below 2 lines of code to get Divisor size, it is very important.
@@ -490,7 +517,7 @@ public class GameActivity extends AppCompatActivity {
                 //Siva: I guess once we have numberArray automatically
                 // UI will show the quesiton as numbersArray[0] / numbersArray[1]
 
-            }
+            }*/
 
         }
     }
@@ -841,29 +868,32 @@ public class GameActivity extends AppCompatActivity {
             progressBar.setProgress(100);
 
             int secondsDelayed = flickeringSpeed;
-            new Handler().postDelayed(new Runnable() {
-                public void run() {
-                    Intent intent =
-                            new Intent(GameActivity.this,
-                                    EnterAnswer.class);
+            if (!killMe) {
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        Intent intent =
+                                new Intent(GameActivity.this,
+                                        EnterAnswer.class);
 
-                    if (getIntent().hasExtra("assignment")) {
+                        if (getIntent().hasExtra("assignment")) {
 
-                        Log.e("GAME ACTIVITY", "run: ");
-                        intent.putExtra("numbersArray", numbersArray);
-                        intent.putExtra("noOfDigits", noOfDigits);
-                        intent.putExtra("cal_result", getIntent().getStringExtra("calc_type"));
-                        intent.putExtra("assign", "assign");
-                    } else {
-                        intent.putExtra("numbersArray", numbersArray);
-                        intent.putExtra("noOfDigits", noOfDigits);
-                        intent.putExtra("cal_result", getIntent().getStringExtra("calc_type"));
+                            Log.e("GAME ACTIVITY", "run: ");
+                            intent.putExtra("numbersArray", numbersArray);
+                            intent.putExtra("noOfDigits", noOfDigits);
+                            intent.putExtra("cal_result", getIntent().getStringExtra("calc_type"));
+                            intent.putExtra("assign", "assign");
+                        } else {
+                            intent.putExtra("numbersArray", numbersArray);
+                            intent.putExtra("noOfDigits", noOfDigits);
+                            intent.putExtra("cal_result", getIntent().getStringExtra("calc_type"));
+                        }
+
+
+                        startActivity(intent);
                     }
+                }, secondsDelayed);
+            }
 
-
-                    startActivity(intent);
-                }
-            }, secondsDelayed);
         }
 
     }

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="@color/spalsh_background"
+    android:fitsSystemWindows="true"
     tools:context=".Activities.CorrectActivity">
 
     <TextView
@@ -369,23 +369,23 @@
     </androidx.cardview.widget.CardView>
 
     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
         app:layout_constraintBottom_toTopOf="@+id/nextQuestionResult"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViewR"
-        app:layout_constraintVertical_bias="1.0"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="45dp">
+        app:layout_constraintVertical_bias="1.0">
 
         <Button
             android:id="@+id/nextQuestionResults"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/button_bg_image"
             android:fontFamily="@font/avenirheavy"
             android:paddingBottom="12dp"
-            android:layout_centerHorizontal="true"
             android:text="Next Question"
             android:textAllCaps="false"
             android:textColor="@color/white"
@@ -394,19 +394,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
         <Button
-            android:layout_below="@+id/nextQuestionResults"
-            android:layout_centerHorizontal="true"
             android:id="@+id/quitToMainBtnCorrect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/nextQuestionResults"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/button_bg_image"
             android:fontFamily="@font/avenirheavy"
             android:paddingBottom="12dp"
-            android:text="Quit"
+            android:text="Exit"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="21dp" />
+            android:textSize="21sp" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

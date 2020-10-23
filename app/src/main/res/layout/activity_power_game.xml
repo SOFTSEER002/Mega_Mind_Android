@@ -29,40 +29,58 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="-10dp"
             android:fontFamily="@font/baloo"
-            android:text="Megamind Abacus"
+            android:text="Megamind \nAbacus Practice"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="27sp" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/numberPowerGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_gallery"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:text="120 sec"
+        android:textColor="@color/black_zeplin"
+        android:textSize="27sp" />
+
+    <RelativeLayout
+        android:id="@+id/center"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/numberPowerGame"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/flickeringGameBg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/flickeringnumber_bgimage" />
 
         <TextView
             android:id="@+id/timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/headText"
-            android:layout_centerInParent="false"
+            android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/baloo"
-            android:text="120 sec"
-            android:textAlignment="center"
+            android:fontFamily="@font/avenirheavy"
             android:textColor="@android:color/white"
-            android:textSize="23sp" />
-
+            android:textSize="80sp"
+            app:layout_constraintBottom_toBottomOf="@+id/flickeringGameBg"
+            app:layout_constraintEnd_toEndOf="@+id/flickeringGameBg"
+            app:layout_constraintStart_toStartOf="@+id/flickeringGameBg"
+            app:layout_constraintTop_toTopOf="@+id/flickeringGameBg" />
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/flickeringGameBg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.64"
-        app:srcCompat="@drawable/flickeringnumber_bgimage" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -77,21 +95,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/flickeringGameBg"
+        app:layout_constraintTop_toBottomOf="@+id/center"
         app:layout_constraintVertical_bias="0.949" />
 
-    <TextView
-        android:id="@+id/numberPowerGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/avenirheavy"
-        android:textColor="@android:color/white"
-        android:textSize="100sp"
-        app:layout_constraintBottom_toBottomOf="@+id/flickeringGameBg"
-        app:layout_constraintEnd_toEndOf="@+id/flickeringGameBg"
-        app:layout_constraintStart_toStartOf="@+id/flickeringGameBg"
-        app:layout_constraintTop_toTopOf="@+id/flickeringGameBg" />
 
 </RelativeLayout>

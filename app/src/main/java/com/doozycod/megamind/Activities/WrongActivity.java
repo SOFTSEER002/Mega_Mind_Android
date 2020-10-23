@@ -151,13 +151,24 @@ public class WrongActivity extends AppCompatActivity {
             } else {
                 result.setText((totalCorrect1) + "/" + sharedPreferenceMethod.getQuestions());
             }
-            if (questionNo == Integer.parseInt(sharedPreferenceMethod.getQuestions())) {
-                seeresults.setVisibility(View.VISIBLE);
-                nextQuestion.setVisibility(View.INVISIBLE);
-                quitButton.setVisibility(View.INVISIBLE);
-                prefs.edit().remove("questions").apply();
+            if (getIntent().hasExtra("assignmentAnswer")) {
+                if (questionNo == Integer.parseInt(sharedPreferenceMethod.getQuestions()) && questionNo != 1) {
+                    seeresults.setVisibility(View.VISIBLE);
+                    nextQuestion.setVisibility(View.INVISIBLE);
+                    quitButton.setVisibility(View.VISIBLE);
+                    prefs.edit().remove("questions").apply();
 
+                }
+            } else {
+                if (50 == Integer.parseInt(sharedPreferenceMethod.getQuestions())) {
+                    seeresults.setVisibility(View.VISIBLE);
+                    nextQuestion.setVisibility(View.INVISIBLE);
+                    quitButton.setVisibility(View.VISIBLE);
+                    prefs.edit().remove("questions").apply();
+
+                }
             }
+
         }
 
 
@@ -254,7 +265,7 @@ public class WrongActivity extends AppCompatActivity {
                     float percentD = (float) totalCorrect / dbHelper.getQuestionResults(Integer.parseInt(sharedPreferenceMethod.getAssignmentId())).size();
                     percentD = percentD * 100;
                     int p = Math.round(percentD);
-                    sharedPreferenceMethod.setPercentage(p+"");
+                    sharedPreferenceMethod.setPercentage(p + "");
 //                    UpdateQuestionModel model = new UpdateQuestionModel();
 //                    model.setPercentage(p);
 //                    model.setAssignmentStatus("completed");
@@ -367,9 +378,13 @@ public class WrongActivity extends AppCompatActivity {
                         (WrongActivity.this,
                                 GameActivity.class);
                 if (sharedPreferenceMethod.getType().equals("Division")) {
-                    sharedPreferenceMethod.insertProperties(sharedPreferenceMethod.getType(), sharedPreferenceMethod.getFlickerSpeed(), sharedPreferenceMethod.getDigitSize(), sharedPreferenceMethod.getNoOfDigits() + "", sharedPreferenceMethod.getQuestions());
+                    sharedPreferenceMethod.insertProperties(sharedPreferenceMethod.getType(), sharedPreferenceMethod.getFlickerSpeed(), sharedPreferenceMethod.getDigitSize(), sharedPreferenceMethod.getNoOfDigits() + "",
+                            "" + (Integer.parseInt(sharedPreferenceMethod.getQuestions()) + 1));
                     if (getIntent().hasExtra("assignmentAnswer")) {
                         intent.putExtra("assignment", "assignment");
+                    } else {
+                        int qNo = Integer.parseInt(sharedPreferenceMethod.getQuestions()) + 1;
+                        sharedPreferenceMethod.insertQuestions(qNo + "");
                     }
                     intent.putExtra("digitSize", sharedPreferenceMethod.getDigitSize());
                     intent.putExtra("noOfDigits", sharedPreferenceMethod.getNoOfDigits());
@@ -385,6 +400,9 @@ public class WrongActivity extends AppCompatActivity {
                 } else {
                     if (getIntent().hasExtra("assignmentAnswer")) {
                         intent.putExtra("assignment", "assignment");
+                    } else {
+                        int noQuestion = Integer.parseInt(sharedPreferenceMethod.getQuestions()) + 1;
+                        sharedPreferenceMethod.insertQuestions(noQuestion + "");
                     }
                     intent.putExtra("digitSize", sharedPreferenceMethod.getDigitSize());
                     intent.putExtra("noOfDigits", sharedPreferenceMethod.getNoOfDigits());
