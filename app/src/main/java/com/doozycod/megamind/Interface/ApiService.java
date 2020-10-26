@@ -24,8 +24,6 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiService {
-    //    @POST("visitor/setAppointment.php")
-//    @FormUrlEncoded
 
     @GET("student")
     Call<StudentModel> getStudent(@Query("mCode") String mCode);

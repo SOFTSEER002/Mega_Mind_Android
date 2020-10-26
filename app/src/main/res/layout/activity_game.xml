@@ -66,27 +66,18 @@
         app:srcCompat="@drawable/flickeringnumber_bgimage" />
 
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="265dp"
-        android:layout_height="9dp"
-        android:layout_below="@+id/flickeringGameBg"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
-        android:progressBackgroundTint="#3699D5" />
 
     <Button
         android:id="@+id/exitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_below="@+id/flickeringGameBg"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/button_bg_image"
         android:fontFamily="@font/avenirheavy"
         android:paddingBottom="12dp"
@@ -94,6 +85,16 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="21sp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="265dp"
+        android:layout_height="9dp"
+        android:layout_below="@+id/exitButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:progressBackgroundTint="#3699D5" />
 
     <TextView
         android:id="@+id/numberDisplayGame"

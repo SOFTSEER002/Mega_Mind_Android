@@ -137,7 +137,7 @@ public class SelectedAssignmentResultFragment extends Fragment {
                 if (databaseHelper != null) {
                     databaseHelper.deleteTable();
                 }
-                mCallbackListener.mCallbackListener(true);
+//                mCallbackListener.mCallbackListener(true);
                 getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new PracticeFragment()).commit();
 
             }

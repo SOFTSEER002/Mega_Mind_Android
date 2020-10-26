@@ -104,7 +104,7 @@ public class WrongActivity extends AppCompatActivity {
             questinNum = dbHelper.getQuestionResults(Integer.parseInt(sharedPreferenceMethod.getAssignmentId())).size() + 1;
 
             Log.e("WRONG ACTIVITY", "onCreate: assignmentIntent");
-            quitButton.setVisibility(View.INVISIBLE);
+//            quitButton.setVisibility(View.VISIBLE);
             RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) nextQuestion.getLayoutParams();
             // position on right bottom
             rlp.addRule(RelativeLayout.ALIGN_PARENT_LEFT, 0);
@@ -130,7 +130,7 @@ public class WrongActivity extends AppCompatActivity {
             if (questinNum == Integer.parseInt(sharedPreferenceMethod.getQuestions())) {
                 seeresults.setVisibility(View.VISIBLE);
                 nextQuestion.setVisibility(View.INVISIBLE);
-                quitButton.setVisibility(View.INVISIBLE);
+//                quitButton.setVisibility(View.INVISIBLE);
                 prefs.edit().remove("questions").apply();
 
             }
@@ -155,7 +155,7 @@ public class WrongActivity extends AppCompatActivity {
                 if (questionNo == Integer.parseInt(sharedPreferenceMethod.getQuestions()) && questionNo != 1) {
                     seeresults.setVisibility(View.VISIBLE);
                     nextQuestion.setVisibility(View.INVISIBLE);
-                    quitButton.setVisibility(View.VISIBLE);
+//                    quitButton.setVisibility(View.VISIBLE);
                     prefs.edit().remove("questions").apply();
 
                 }
@@ -163,7 +163,7 @@ public class WrongActivity extends AppCompatActivity {
                 if (50 == Integer.parseInt(sharedPreferenceMethod.getQuestions())) {
                     seeresults.setVisibility(View.VISIBLE);
                     nextQuestion.setVisibility(View.INVISIBLE);
-                    quitButton.setVisibility(View.VISIBLE);
+//                    quitButton.setVisibility(View.VISIBLE);
                     prefs.edit().remove("questions").apply();
 
                 }

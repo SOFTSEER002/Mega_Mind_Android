@@ -361,7 +361,7 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
 //            getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new PracticeFragment()).commit();
 
 //        } else {
-        navigationView.setCheckedItem(R.id.assignment);
+        navigationView.setCheckedItem(R.id.practice);
         getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new PracticeFragment(), "FragmentAssignment").commit();
 //        }
 
@@ -370,7 +370,7 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
     @Override
     public void OnNavigationMenuChange(boolean send, JSONObject jsonObject) {
         if (send) {
-            navigationView.setCheckedItem(R.id.assignment);
+            navigationView.setCheckedItem(R.id.practice);
             navigationView.getHeaderView(0).findViewById(R.id.levelCheck).setVisibility(View.VISIBLE);
             navigationView.getMenu().findItem(R.id.nav_home).setVisible(false);
             navigationView.getMenu().findItem(R.id.feedback1).setVisible(false);

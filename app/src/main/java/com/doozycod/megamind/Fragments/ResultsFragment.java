@@ -93,7 +93,7 @@ public class ResultsFragment extends Fragment {
                 setIntent.putExtra("practice", "answer");
                 startActivity(setIntent);
                 getActivity().finishAffinity();
-                mCallbackListener.mCallbackListener(true);
+//                mCallbackListener.mCallbackListener(true);
 
             }
         });
