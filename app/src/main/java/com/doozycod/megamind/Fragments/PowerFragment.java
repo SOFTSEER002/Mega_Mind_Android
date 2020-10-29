@@ -79,7 +79,7 @@ public class PowerFragment extends Fragment {
 
         if (getArguments().getString("powerExerciseType").equals("Addition")) {
             powerTypeTxt.setText("Keep Adding");
-            powerRandomTxt.setText("+" + random);
+            powerRandomTxt.setText("" + random);
             objectiveTxt.setText("Start from " + startForm + ", Keep adding " + random
                     + " for " + selectedTimeTxt.getText().toString());
         }
@@ -90,7 +90,7 @@ public class PowerFragment extends Fragment {
             objectiveTxt.setText("Start from " + startForm + ", Keep subtracting " + random
                     + " for " + selectedTimeTxt.getText().toString());
             startFromTxt.setText(startForm + "");
-            powerRandomTxt.setText("-" + random);
+            powerRandomTxt.setText("" + random);
         }
         startFromTxt.addTextChangedListener(new TextWatcher() {
             @Override

@@ -218,7 +218,7 @@ public class SelectedAssignmentResultFragment extends Fragment {
                             android.R.animator.fade_out)
                             .replace(R.id.nav_host_fragment, fragment).addToBackStack("Assignment").commit();
                 }
-                if (position == arraySize ) {
+                if (position == arraySize) {
                     position = 0;
                     final String upperString = assignments.get(position).getAssignmentType().substring(0, 1).toUpperCase() + assignments.get(position).getAssignmentType().substring(1);
                     sharedPreferenceMethod.setAssignmentId(assignments.get(position).getStudentAssignmentId());
@@ -299,14 +299,17 @@ public class SelectedAssignmentResultFragment extends Fragment {
                         arraySize = response.body().getAssignments().size();
                         Log.e(TAG, "onResponse: Assignments " + assignments.size());
 //                        get response in model (local)
-                        if(sharedPreferenceMethod.getOnResultClick().equals("saved")){
-                            Log.e(TAG, "onResponse: main" );
-                        }else{
+                        if (sharedPreferenceMethod.getOnResultClick().equals("saved")) {
+                            Log.e(TAG, "onResponse: main");
+                        } else {
                             if (response.body().getAssignments().size() == 0) {
                                 doneAssignmentTxt.setVisibility(View.VISIBLE);
                                 getNewAssignmentButton.setVisibility(View.VISIBLE);
+//                                tryAgainButton.setVisibility(View.GONE);
                             } else {
                                 nextAssignmentButton.setVisibility(View.VISIBLE);
+                                tryAgainButton.setVisibility(View.VISIBLE);
+
                             }
                         }
                     }

@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.PowerManager;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.doozycod.megamind.R;
@@ -28,6 +30,8 @@ public class PowerGameActivity extends AppCompatActivity {
             updateGUI(intent); // or whatever method used to update your GUI fields
         }
     };
+    Button exitButton;
+    CountDownTimer countDownTimer;
 
     private void updateGUI(Intent intent) {
         if (intent.getExtras() != null) {
@@ -44,6 +48,7 @@ public class PowerGameActivity extends AppCompatActivity {
 //        Log.e("TAG", "Started service");
         timer = findViewById(R.id.timer);
         numberPowerGame = findViewById(R.id.numberPowerGame);
+        exitButton = findViewById(R.id.exitButton);
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 
 
@@ -78,7 +83,20 @@ public class PowerGameActivity extends AppCompatActivity {
             wl.acquire(count);
 
         }
-        new CountDownTimer(count, delay) { // adjust the milli seconds here
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                countDownTimer.cancel();
+                Intent intent = new Intent
+                        (PowerGameActivity.this,
+                                MainNavigation.class);
+
+                intent.putExtra("practice", "answer");
+                startActivity(intent);
+                finishAffinity();
+            }
+        });
+        countDownTimer = new CountDownTimer(count, delay) { // adjust the milli seconds here
             public void onTick(long millisUntilFinished) {
                 timer.setText("" + String.format("%d:%d\n sec",
                         TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),

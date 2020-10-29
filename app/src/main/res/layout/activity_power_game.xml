@@ -81,6 +81,24 @@
             app:layout_constraintTop_toTopOf="@+id/flickeringGameBg" />
     </RelativeLayout>
 
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/button_bg_image"
+        android:fontFamily="@font/avenirheavy"
+        android:paddingBottom="12dp"
+        android:text="Exit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="21sp" />
 
     <ProgressBar
         android:id="@+id/progressBar"

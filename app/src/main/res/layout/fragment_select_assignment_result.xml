@@ -56,56 +56,62 @@
                         android:textColor="@color/buttonlabelcolor"
                         android:visibility="gone" />
 
-                    <Button
-                        android:id="@+id/getNewAssignmentButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <LinearLayout
                         android:layout_below="@id/doneAssignmentTxt"
-                        android:layout_centerHorizontal="true"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="30dp"
-                        android:background="@drawable/button_bg_image"
-                        android:fontFamily="@font/avenirheavy"
-                        android:paddingBottom="12dp"
-                        android:text="Get new assignments"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:textSize="21dp"
-                        android:visibility="gone" />
-
-                    <Button
-                        android:id="@+id/nextAssignmentButton"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/doneAssignmentTxt"
-                        android:layout_centerHorizontal="true"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="30dp"
-                        android:background="@drawable/button_bg_image"
-                        android:fontFamily="@font/avenirheavy"
-                        android:paddingBottom="12dp"
-                        android:text="Next assignment"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:textSize="21dp"
-                        android:visibility="gone" />
+                        android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/tryAgainButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/result_recyclerView"
-                        android:layout_centerHorizontal="true"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="30dp"
-                        android:background="@drawable/button_bg_image"
-                        android:fontFamily="@font/avenirheavy"
-                        android:paddingBottom="12dp"
-                        android:text="Exit"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:textSize="21dp"
-                        android:visibility="gone" />
+                        <Button
+                            android:id="@+id/getNewAssignmentButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/button_bg_image"
+                            android:fontFamily="@font/avenirheavy"
+                            android:paddingBottom="12dp"
+                            android:text="Get new assignments"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="21dp"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/nextAssignmentButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/doneAssignmentTxt"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/button_bg_image"
+                            android:fontFamily="@font/avenirheavy"
+                            android:paddingBottom="12dp"
+                            android:text="Next assignment"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="21dp"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/tryAgainButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/result_recyclerView"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="30dp"
+                            android:background="@drawable/button_bg_image"
+                            android:fontFamily="@font/avenirheavy"
+                            android:paddingBottom="12dp"
+                            android:text="Exit"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="21dp"
+                            android:visibility="visible" />
+                    </LinearLayout>
 
                 </RelativeLayout>
 

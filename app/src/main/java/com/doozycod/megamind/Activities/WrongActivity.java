@@ -104,16 +104,16 @@ public class WrongActivity extends AppCompatActivity {
             questinNum = dbHelper.getQuestionResults(Integer.parseInt(sharedPreferenceMethod.getAssignmentId())).size() + 1;
 
             Log.e("WRONG ACTIVITY", "onCreate: assignmentIntent");
-//            quitButton.setVisibility(View.VISIBLE);
-            RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) nextQuestion.getLayoutParams();
-            // position on right bottom
-            rlp.addRule(RelativeLayout.ALIGN_PARENT_LEFT, 0);
-            rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, 0);
-            rlp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);
-            rlp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-
-            nextQuestion.setLayoutParams(rlp);
-            rlp.setMargins(0, 0, 0, 100);
+            quitButton.setVisibility(View.VISIBLE);
+//            RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) nextQuestion.getLayoutParams();
+//            // position on right bottom
+//            rlp.addRule(RelativeLayout.ALIGN_PARENT_LEFT, 0);
+//            rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, 0);
+//            rlp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);
+//            rlp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+//
+//            nextQuestion.setLayoutParams(rlp);
+//            rlp.setMargins(0, 0, 0, 100);
             if (questinNum == 0) {
                 questinNum = 1;
                 questionNoTextView.setText("Question " + questinNum);
@@ -129,8 +129,8 @@ public class WrongActivity extends AppCompatActivity {
             }
             if (questinNum == Integer.parseInt(sharedPreferenceMethod.getQuestions())) {
                 seeresults.setVisibility(View.VISIBLE);
-                nextQuestion.setVisibility(View.INVISIBLE);
-//                quitButton.setVisibility(View.INVISIBLE);
+                nextQuestion.setVisibility(View.GONE);
+                quitButton.setVisibility(View.GONE);
                 prefs.edit().remove("questions").apply();
 
             }
@@ -154,15 +154,16 @@ public class WrongActivity extends AppCompatActivity {
             if (getIntent().hasExtra("assignmentAnswer")) {
                 if (questionNo == Integer.parseInt(sharedPreferenceMethod.getQuestions()) && questionNo != 1) {
                     seeresults.setVisibility(View.VISIBLE);
-                    nextQuestion.setVisibility(View.INVISIBLE);
-//                    quitButton.setVisibility(View.VISIBLE);
+                    nextQuestion.setVisibility(View.GONE);
+//                    quitButton.setVisibility(View.GONE);
                     prefs.edit().remove("questions").apply();
 
                 }
             } else {
                 if (50 == Integer.parseInt(sharedPreferenceMethod.getQuestions())) {
                     seeresults.setVisibility(View.VISIBLE);
-                    nextQuestion.setVisibility(View.INVISIBLE);
+                    nextQuestion.setVisibility(View.GONE);
+
 //                    quitButton.setVisibility(View.VISIBLE);
                     prefs.edit().remove("questions").apply();
 
@@ -378,40 +379,55 @@ public class WrongActivity extends AppCompatActivity {
                         (WrongActivity.this,
                                 GameActivity.class);
                 if (sharedPreferenceMethod.getType().equals("Division")) {
-                    sharedPreferenceMethod.insertProperties(sharedPreferenceMethod.getType(), sharedPreferenceMethod.getFlickerSpeed(), sharedPreferenceMethod.getDigitSize(), sharedPreferenceMethod.getNoOfDigits() + "",
-                            "" + (Integer.parseInt(sharedPreferenceMethod.getQuestions()) + 1));
                     if (getIntent().hasExtra("assignmentAnswer")) {
                         intent.putExtra("assignment", "assignment");
+                       /* if(sharedPreferenceMethod.getType().equals("Subtraction") ||
+                                sharedPreferenceMethod.getType().equals("Addition") ){
+                        }*/
+                        if (sharedPreferenceMethod.getSubtraction()) {
+                            intent.putExtra("subtraction", 1);
+                        } else {
+                            intent.putExtra("subtraction", 0);
+                        }
+                        sharedPreferenceMethod.insertProperties(sharedPreferenceMethod.getType(), sharedPreferenceMethod.getFlickerSpeed(), sharedPreferenceMethod.getDigitSize(), sharedPreferenceMethod.getNoOfDigits() + "",
+                                sharedPreferenceMethod.getQuestions());
                     } else {
-                        int qNo = Integer.parseInt(sharedPreferenceMethod.getQuestions()) + 1;
-                        sharedPreferenceMethod.insertQuestions(qNo + "");
+                        sharedPreferenceMethod.insertProperties(sharedPreferenceMethod.getType(), sharedPreferenceMethod.getFlickerSpeed(), sharedPreferenceMethod.getDigitSize(), sharedPreferenceMethod.getNoOfDigits() + "",
+                                "" + (Integer.parseInt(sharedPreferenceMethod.getQuestions()) + 1));
+//                        int qNo = Integer.parseInt(sharedPreferenceMethod.getQuestions()) + 1;
+//                        sharedPreferenceMethod.insertQuestions(qNo + "");
                     }
                     intent.putExtra("digitSize", sharedPreferenceMethod.getDigitSize());
                     intent.putExtra("noOfDigits", sharedPreferenceMethod.getNoOfDigits());
                     intent.putExtra("flickeringSpeed", sharedPreferenceMethod.getFlickerSpeed());
-                    if (sharedPreferenceMethod.getSubtraction()) {
+
+                   /* if (sharedPreferenceMethod.getSubtraction()) {
                         intent.putExtra("subtraction", 1);
                     } else {
                         intent.putExtra("subtraction", 0);
-                    }
+                    }*/
+
                     intent.putExtra("levelNumber", 1);
                     intent.putExtra("calc_type", sharedPreferenceMethod.getType());
 
                 } else {
                     if (getIntent().hasExtra("assignmentAnswer")) {
                         intent.putExtra("assignment", "assignment");
+                        if (sharedPreferenceMethod.getSubtraction()) {
+                            intent.putExtra("subtraction", 1);
+                        } else {
+                            intent.putExtra("subtraction", 0);
+                        }
                     } else {
-                        int noQuestion = Integer.parseInt(sharedPreferenceMethod.getQuestions()) + 1;
-                        sharedPreferenceMethod.insertQuestions(noQuestion + "");
+                        sharedPreferenceMethod.insertProperties(sharedPreferenceMethod.getType(), sharedPreferenceMethod.getFlickerSpeed(), sharedPreferenceMethod.getDigitSize(), sharedPreferenceMethod.getNoOfDigits() + "",
+                                "" + (Integer.parseInt(sharedPreferenceMethod.getQuestions()) + 1));
+//                        int noQuestion = Integer.parseInt(sharedPreferenceMethod.getQuestions()) + 1;
+//                        sharedPreferenceMethod.insertQuestions(noQuestion + "");
                     }
                     intent.putExtra("digitSize", sharedPreferenceMethod.getDigitSize());
                     intent.putExtra("noOfDigits", sharedPreferenceMethod.getNoOfDigits());
                     intent.putExtra("flickeringSpeed", sharedPreferenceMethod.getFlickerSpeed());
-                    if (sharedPreferenceMethod.getSubtraction()) {
-                        intent.putExtra("subtraction", 1);
-                    } else {
-                        intent.putExtra("subtraction", 0);
-                    }
+
                     intent.putExtra("levelNumber", 1);
                     intent.putExtra("calc_type", sharedPreferenceMethod.getType());
                 }
@@ -419,16 +435,27 @@ public class WrongActivity extends AppCompatActivity {
             }
         });
 
+        final int finalQuestinNum1 = questinNum;
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent
-                        (WrongActivity.this,
-                                MainNavigation.class);
+                Intent setIntent = new Intent(WrongActivity.this, MainNavigation.class);
+                if (finalQuestinNum1 == Integer.parseInt(sharedPreferenceMethod.getQuestions())) {
+                    setIntent.putExtra("int", 0);
+                    setIntent.putExtra("result", "seeResults");
+                    startActivity(setIntent);
+                } else {
+                    setIntent.putExtra("practice", "answer");
+                    startActivity(setIntent);
+                    finishAffinity();
+                }
+
+
+//                Intent intent = new Intent
+//                        (WrongActivity.this,
+//                                MainNavigation.class);
 //                intent.putExtra("activity_name","incorrect");
-                intent.putExtra("int", 0);
-                intent.putExtra("result", "seeResults");
-                startActivity(intent);
+
 //                sharedPreferenceMethod.saveOnResultClick("");
             }
         });
