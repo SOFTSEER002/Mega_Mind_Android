@@ -47,6 +47,7 @@ public class CorrectActivity extends AppCompatActivity {
     ApiService apiService;
     CustomProgressBar progressBar;
     private boolean isSubmitted = false;
+    Button quitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +67,7 @@ public class CorrectActivity extends AppCompatActivity {
 
         final Button seeresults = findViewById(R.id.seeresults);
         Button nextQuestion = findViewById(R.id.nextQuestionResults);
-        Button quitButton = findViewById(R.id.quitToMainBtnCorrect);
+        quitButton = findViewById(R.id.quitToMainBtnCorrect);
 
 
         TextView numbersArrayTextView =
@@ -83,7 +84,6 @@ public class CorrectActivity extends AppCompatActivity {
 
         final int questionNo = prefs.getInt("questions", -22);
 
-
         if (getIntent().hasExtra("assignmentAnswer")) {
             int totalCorrect = 0;
             for (int i = 0; i < dbHelper.getQuestionResults(Integer.parseInt(sharedPreferenceMethod.getAssignmentId())).size(); i++) {
@@ -93,16 +93,17 @@ public class CorrectActivity extends AppCompatActivity {
             }
 
             questinNum = dbHelper.getQuestionResults(Integer.parseInt(sharedPreferenceMethod.getAssignmentId())).size() + 1;
-            Log.e("CORRECT ACTIVITY", "onCreate: assignmentIntent");
+
             quitButton.setVisibility(View.VISIBLE);
-            RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) nextQuestion.getLayoutParams();
-            // position on right bottom
-            rlp.addRule(RelativeLayout.ALIGN_PARENT_LEFT, 0);
-            rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, 0);
-            rlp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);
-            rlp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-            nextQuestion.setLayoutParams(rlp);
-            rlp.setMargins(0, 0, 0, 100);
+
+//            RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) nextQuestion.getLayoutParams();
+//            // position on right bottom
+//            rlp.addRule(RelativeLayout.ALIGN_PARENT_LEFT, 0);
+//            rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, 0);
+//            rlp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);
+//            rlp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+//            nextQuestion.setLayoutParams(rlp);
+//            rlp.setMargins(0, 0, 0, 100);
 
 
             for (int i = 0; i < dbHelper.getQuestionResults(Integer.parseInt(sharedPreferenceMethod.getAssignmentId())).size(); i++) {
@@ -147,7 +148,7 @@ public class CorrectActivity extends AppCompatActivity {
                 if (questionNo == Integer.parseInt(sharedPreferenceMethod.getQuestions()) && questionNo != 1) {
                     seeresults.setVisibility(View.VISIBLE);
                     nextQuestion.setVisibility(View.GONE);
-                    quitButton.setVisibility(View.GONE);
+//                    quitButton.setVisibility(View.GONE);
                     prefs.edit().remove("questions").apply();
 
                 }
@@ -155,7 +156,7 @@ public class CorrectActivity extends AppCompatActivity {
                 if (50 == Integer.parseInt(sharedPreferenceMethod.getQuestions())) {
                     seeresults.setVisibility(View.VISIBLE);
                     nextQuestion.setVisibility(View.INVISIBLE);
-                    quitButton.setVisibility(View.VISIBLE);
+//                    quitButton.setVisibility(View.VISIBLE);
                     prefs.edit().remove("questions").apply();
 
                 }
@@ -359,9 +360,21 @@ public class CorrectActivity extends AppCompatActivity {
                     intent.putExtra("int", 1);
                     startActivity(intent);
                 } else {
+                    if (getIntent().hasExtra("assignmentAnswer")) {
+
                     intent.putExtra("practice", "answer");
                     startActivity(intent);
                     finishAffinity();
+                    } else {
+                        intent.putExtra("result", "seeResults");
+                        intent.putExtra("int", 1);
+                        startActivity(intent);
+                    }
+
+
+//                    intent.putExtra("practice", "answer");
+//                    startActivity(intent);
+//                    finishAffinity();
                 }
             }
         });
@@ -369,7 +382,6 @@ public class CorrectActivity extends AppCompatActivity {
     }
 
     public String checkAssignmentDay() {
-
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
         Date d = new Date();
 

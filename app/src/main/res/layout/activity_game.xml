@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/spalsh_background"
-
     android:fitsSystemWindows="true"
     tools:context=".Activities.GameActivity">
 
@@ -49,13 +48,16 @@
         android:text=""
         android:textColor="@color/black_zeplin"
         android:textSize="27sp" />
-
+<RelativeLayout
+    android:id="@+id/layout"
+    android:layout_centerInParent="true"
+    android:layout_below="@+id/numberType"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <ImageView
         android:id="@+id/flickeringGameBg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/numberType"
-        android:layout_centerInParent="true"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,6 +66,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.64"
         app:srcCompat="@drawable/flickeringnumber_bgimage" />
+    <TextView
+        android:id="@+id/numberDisplayGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text=""
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/avenirheavy"
+        android:textColor="@android:color/white"
+        android:textSize="100sp"  />
+</RelativeLayout>
+
 
 
 
@@ -72,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/flickeringGameBg"
+        android:layout_below="@+id/layout"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -96,18 +110,6 @@
         android:layout_marginBottom="15dp"
         android:progressBackgroundTint="#3699D5" />
 
-    <TextView
-        android:id="@+id/numberDisplayGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/avenirheavy"
-        android:textColor="@android:color/white"
-        android:textSize="100sp"
-        app:layout_constraintBottom_toBottomOf="@+id/flickeringGameBg"
-        app:layout_constraintEnd_toEndOf="@+id/flickeringGameBg"
-        app:layout_constraintStart_toStartOf="@+id/flickeringGameBg"
-        app:layout_constraintTop_toTopOf="@+id/flickeringGameBg" />
+
 
 </RelativeLayout>

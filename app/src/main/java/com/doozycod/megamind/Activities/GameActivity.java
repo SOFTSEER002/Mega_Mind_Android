@@ -100,7 +100,13 @@ public class GameActivity extends AppCompatActivity {
         numbersArray = getDivisionQuestion(digitSize, sharedPreferenceMethod.getDivisorSize());
         Log.e("RUN", "run11: " + num + "\n" + rand);*/
         if (sharedPreferenceMethod.getType().equals("Subtraction")) {
-            numberType.setText("Addition");
+            if (getIntent().hasExtra("assignment")) {
+                numberType.setText(sharedPreferenceMethod.getType());
+
+            } else {
+                numberType.setText("Addition");
+
+            }
 
         } else {
             numberType.setText(sharedPreferenceMethod.getType() + "");
@@ -151,85 +157,122 @@ public class GameActivity extends AppCompatActivity {
 
     private void calculationMethod() {
 
-
         if (subtraction == 1) {
-            int sum = 0;
-            for (int i = 0; i < noOfDigits; i++) {
-                if (digitSize.equals("Single")) {
-                    int oddEven = random.nextInt(2);
-                    int singleRandom = random.nextInt(10);
+            if (sharedPreferenceMethod.getType().equals("Addition")
+                    || sharedPreferenceMethod.getType().equals("Subtraction")) {
+                int sum = 0;
+                for (int i = 0; i < noOfDigits; i++) {
+                    if (digitSize.equals("Single")) {
+                        int oddEven = random.nextInt(2);
+                        int singleRandom = random.nextInt(10);
 
-                    if (singleRandom != 0) {
-                        if (oddEven == 0 && sum > singleRandom)
-                            numbersArray[i] = singleRandom * -1;
-                        else
-                            numbersArray[i] = singleRandom;
-                    } else {
-                        if (oddEven == 0 && sum > singleRandom)
-                            numbersArray[i] = -1;
-                        else
-                            numbersArray[i] = 1;
+                        if (singleRandom != 0) {
+                            if (oddEven == 0 && sum > singleRandom)
+                                numbersArray[i] = singleRandom * -1;
+                            else
+                                numbersArray[i] = singleRandom;
+                        } else {
+                            if (oddEven == 0 && sum > singleRandom)
+                                numbersArray[i] = -1;
+                            else
+                                numbersArray[i] = 1;
+                        }
+                        sum = sum + numbersArray[i];
                     }
-                    sum = sum + numbersArray[i];
-                }
 
-                if (digitSize.equals("Double")) {
-                    int oddEven = random.nextInt(2);
-                    int doubleRandom =
-                            (random.nextInt(89) + 10);
-                    if (doubleRandom != 0) {
-                        if (oddEven == 0 && sum > doubleRandom)
-                            numbersArray[i] = doubleRandom * -1;
-                        else
-                            numbersArray[i] = doubleRandom;
-                    } else {
-                        if (oddEven == 0 && sum > doubleRandom)
-                            numbersArray[i] = -11;
-                        else
-                            numbersArray[i] = 11;
+                    if (digitSize.equals("Double")) {
+                        int oddEven = random.nextInt(2);
+                        int doubleRandom =
+                                (random.nextInt(89) + 10);
+                        if (doubleRandom != 0) {
+                            if (oddEven == 0 && sum > doubleRandom)
+                                numbersArray[i] = doubleRandom * -1;
+                            else
+                                numbersArray[i] = doubleRandom;
+                        } else {
+                            if (oddEven == 0 && sum > doubleRandom)
+                                numbersArray[i] = -11;
+                            else
+                                numbersArray[i] = 11;
+                        }
+                        sum = sum + numbersArray[i];
                     }
-                    sum = sum + numbersArray[i];
-                }
-                if (digitSize.equals("Triple")) {
-                    int oddEvenDecider = random.nextInt(2);
-                    int tripleRandom =
-                            (random.nextInt(900) + 100);
+                    if (digitSize.equals("Triple")) {
+                        int oddEvenDecider = random.nextInt(2);
+                        int tripleRandom =
+                                (random.nextInt(900) + 100);
 
-                    if (tripleRandom != 0) {
-                        if (oddEvenDecider == 0 && sum > tripleRandom)
-                            numbersArray[i] = tripleRandom * -1;
-                        else
-                            numbersArray[i] =
-                                    tripleRandom;
-                    } else {
-                        if (oddEvenDecider == 0 && sum > tripleRandom)
-                            numbersArray[i] = -100;
-                        else
-                            numbersArray[i] = 101;
+                        if (tripleRandom != 0) {
+                            if (oddEvenDecider == 0 && sum > tripleRandom)
+                                numbersArray[i] = tripleRandom * -1;
+                            else
+                                numbersArray[i] =
+                                        tripleRandom;
+                        } else {
+                            if (oddEvenDecider == 0 && sum > tripleRandom)
+                                numbersArray[i] = -100;
+                            else
+                                numbersArray[i] = 101;
+                        }
+                        sum = sum + numbersArray[i];
                     }
-                    sum = sum + numbersArray[i];
-                }
-                if (digitSize.equals("Quad")) {
-                    int oddEvenDecider = random.nextInt(2);
-                    int tripleRandom =
-                            (random.nextInt(9000) + 1000);
+                    if (digitSize.equals("Quad")) {
+                        int oddEvenDecider = random.nextInt(2);
+                        int tripleRandom =
+                                (random.nextInt(9000) + 1000);
 
-                    if (tripleRandom != 0) {
-                        if (oddEvenDecider == 0 && sum > tripleRandom)
-                            numbersArray[i] = tripleRandom * -1;
-                        else
-                            numbersArray[i] =
-                                    tripleRandom;
-                    } else {
-                        if (oddEvenDecider == 0 && sum > tripleRandom)
-                            numbersArray[i] = -1000;
-                        else
-                            numbersArray[i] = 1001;
+                        if (tripleRandom != 0) {
+                            if (oddEvenDecider == 0 && sum > tripleRandom)
+                                numbersArray[i] = tripleRandom * -1;
+                            else
+                                numbersArray[i] =
+                                        tripleRandom;
+                        } else {
+                            if (oddEvenDecider == 0 && sum > tripleRandom)
+                                numbersArray[i] = -1000;
+                            else
+                                numbersArray[i] = 1001;
+                        }
+                        sum = sum + numbersArray[i];
                     }
-                    sum = sum + numbersArray[i];
-                }
 
+                }
+            } else {
+                if (sharedPreferenceMethod.getType().equals("Multiplication")) {
+                    for (int i = 0; i < noOfDigits; i++) {
+                        if (digitSize.equals("Single")) {
+                            int singleRandom = random.nextInt(10);
+                            if (singleRandom > 1)
+                                numbersArray[i] = singleRandom;
+                            else
+                                numbersArray[i] = 2;
+
+                        }
+                        if (digitSize.equals("Double")) {
+                            int doubleRandom = random.nextInt(100);
+                            if (doubleRandom > 1)
+                                numbersArray[i] = doubleRandom;
+                            else
+                                numbersArray[i] = 11;
+                        }
+                        if (digitSize.equals("Triple")) {
+                            int tripleRandom = random.nextInt(1000);
+                            if (tripleRandom > 1)
+                                numbersArray[i] = tripleRandom;
+                            else
+                                numbersArray[i] = 101;
+                        }
+                        if (digitSize.equals("Quad")) {
+                            int tripleRandom = random.nextInt(10000);
+                            if (tripleRandom > 1)
+                                numbersArray[i] = tripleRandom;
+                            else
+                                numbersArray[i] = 1001;
+                        }
+                    }
+                }
             }
+
         } else {
 
             Log.e("", "onCreate: " + getIntent().getStringExtra("calc_type"));

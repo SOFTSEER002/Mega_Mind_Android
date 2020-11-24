@@ -80,14 +80,14 @@ public class PowerFragment extends Fragment {
         if (getArguments().getString("powerExerciseType").equals("Addition")) {
             powerTypeTxt.setText("Keep Adding");
             powerRandomTxt.setText("" + random);
-            objectiveTxt.setText("Start from " + startForm + ", Keep adding " + random
+            objectiveTxt.setText("Start from " + startForm + ",\n Add +" + random
                     + " for " + selectedTimeTxt.getText().toString());
         }
         if (getArguments().getString("powerExerciseType").equals("Subtraction")) {
             startForm = random * seconds;
             powerTypeTxt.setText("Keep Subtracting");
 
-            objectiveTxt.setText("Start from " + startForm + ", Keep subtracting " + random
+            objectiveTxt.setText("Start from " + startForm + ",\n Subtract -" + random
                     + " for " + selectedTimeTxt.getText().toString());
             startFromTxt.setText(startForm + "");
             powerRandomTxt.setText("" + random);
@@ -102,12 +102,12 @@ public class PowerFragment extends Fragment {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (getArguments().getString("powerExerciseType").equals("Addition")) {
 
-                    objectiveTxt.setText("Start from " + charSequence + ", Keep adding " + random
+                    objectiveTxt.setText("Start from " + charSequence + "\n Add +" + random
                             + " for " + selectedTimeTxt.getText().toString());
                 }
                 if (getArguments().getString("powerExerciseType").equals("Subtraction")) {
 
-                    objectiveTxt.setText("Start from " + charSequence + ", Keep subtracting " + random
+                    objectiveTxt.setText("Start from " + charSequence + "\n Subtract -" + random
                             + " for " + selectedTimeTxt.getText().toString());
 
                 }

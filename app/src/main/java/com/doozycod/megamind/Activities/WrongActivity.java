@@ -445,9 +445,17 @@ public class WrongActivity extends AppCompatActivity {
                     setIntent.putExtra("result", "seeResults");
                     startActivity(setIntent);
                 } else {
+                    if (getIntent().hasExtra("assignmentAnswer")) {
+
                     setIntent.putExtra("practice", "answer");
                     startActivity(setIntent);
                     finishAffinity();
+                    }else{
+                        setIntent.putExtra("int", 0);
+                        setIntent.putExtra("result", "seeResults");
+                        startActivity(setIntent);
+                    }
+
                 }
 
 

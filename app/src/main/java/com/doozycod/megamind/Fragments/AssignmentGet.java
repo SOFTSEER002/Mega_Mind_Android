@@ -95,19 +95,25 @@ public class AssignmentGet extends Fragment {
         }
 //        sharedPreferenceMethod.insertProperties("Addition", 500+"", "Single","5", "5");
 
-        int assignmentId =Integer.parseInt(sharedPreferenceMethod.getAssignmentId());
-        if(dbHelper.uncompletedAssignments(assignmentId)!= Integer.parseInt(sharedPreferenceMethod.getQuestions()) && dbHelper.uncompletedAssignments(assignmentId) ==0){
-                startButtonAssignment.setText("Start");
-            }else{
-                startButtonAssignment.setText("Resume");
-            }
+        int assignmentId = Integer.parseInt(sharedPreferenceMethod.getAssignmentId());
+        if (dbHelper.uncompletedAssignments(assignmentId) != Integer.parseInt(sharedPreferenceMethod.getQuestions()) && dbHelper.uncompletedAssignments(assignmentId) == 0) {
+            startButtonAssignment.setText("Start");
+        } else {
+            startButtonAssignment.setText("Resume");
+        }
         intent.putExtra("digitSize", Type);
         intent.putExtra("noOfDigits", sharedPreferenceMethod.getNoOfDigits());
         intent.putExtra("flickeringSpeed", sharedPreferenceMethod.getFlickerSpeed());
 
-        if (sharedPreferenceMethod.getSubtraction()) {
-            intent.putExtra("subtraction", 1);
-        } else {
+        if (sharedPreferenceMethod.getType().equals("addition")
+                ||sharedPreferenceMethod.getType().equals("subtraction")) {
+
+            if (sharedPreferenceMethod.getSubtraction()) {
+                intent.putExtra("subtraction", 1);
+            } else {
+                intent.putExtra("subtraction", 0);
+            }
+        }else{
             intent.putExtra("subtraction", 0);
         }
         intent.putExtra("levelNumber", sharedPreferenceMethod.getLevel());
@@ -117,7 +123,7 @@ public class AssignmentGet extends Fragment {
         return v;
     }
 
-//    onClick Listener
+    //    onClick Listener
     private void onClickListener() {
         startButtonAssignment.setOnClickListener(new View.OnClickListener() {
             @Override
