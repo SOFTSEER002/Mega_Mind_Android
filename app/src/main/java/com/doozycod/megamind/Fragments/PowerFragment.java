@@ -87,7 +87,7 @@ public class PowerFragment extends Fragment {
             startForm = random * seconds;
             powerTypeTxt.setText("Keep Subtracting");
 
-            objectiveTxt.setText("Start from " + startForm + ",\n Subtract -" + random
+            objectiveTxt.setText("Start from " + startForm + ",\n Subtract " + random
                     + " for " + selectedTimeTxt.getText().toString());
             startFromTxt.setText(startForm + "");
             powerRandomTxt.setText("" + random);

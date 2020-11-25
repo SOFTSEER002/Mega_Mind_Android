@@ -70,13 +70,12 @@ public class PowerGameActivity extends AppCompatActivity {
         if (getIntent().getStringExtra("powerType").equals("Subtraction")) {
 //            numberPowerGame.setText("-" + getIntent().getIntExtra("random", 0));
             numberPowerGame.setText("Starting from " + getIntent().getStringExtra("startForm")
-                    + ",\n Subtract -" + getIntent().getIntExtra("random", 0) + " For "
+                    + ",\n Subtract " + getIntent().getIntExtra("random", 0) + " For "
                     + temp);
         }
         if (getIntent().getIntExtra("seconds", 60) == 60) {
             count = 60000;
             wl.acquire(count);
-
         }
         if (getIntent().getIntExtra("seconds", 60) == 120) {
             count = 120000;
