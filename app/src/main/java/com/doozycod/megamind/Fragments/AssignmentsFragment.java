@@ -121,6 +121,7 @@ public class AssignmentsFragment extends Fragment {
             getAssignments(Integer.parseInt(sharedPreferenceMethod.getID()), "pending");
             staticText.setVisibility(View.GONE);
         } else {
+
             mainsLay.setVisibility(View.GONE);
         }
 

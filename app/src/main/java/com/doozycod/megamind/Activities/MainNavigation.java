@@ -259,7 +259,7 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
             }
 //            Log.e(TAG, "onCreate: login");
         } else {
-            getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new LoginFragment()).commit();
+            getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new PracticeFragment()).commit();
         }
 
         sharedPreferenceMethod.saveAssignmentTime(17);

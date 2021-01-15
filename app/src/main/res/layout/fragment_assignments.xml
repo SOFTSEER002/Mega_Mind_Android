@@ -75,7 +75,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
-            android:text="dummy text,dummy text dummy text\n you are unauthorized"
+            android:text="you are unauthorized"
             android:textAlignment="center"
             android:textColor="@color/buttonlabelcolor"
             android:visibility="visible" />

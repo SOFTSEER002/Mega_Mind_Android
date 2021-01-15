@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -244,11 +245,17 @@ public class PracticeFragment extends Fragment {
 //                intent.putExtra("assignmentReceived","assignmentReceived");
 //                startActivity(intent);
 //                navigation.OnNavigationChange("assignment");
-                mListener.onFragmentInteraction("assignment");
-                getFragmentManager().beginTransaction().setCustomAnimations(android.R.animator.fade_in,
-                        android.R.animator.fade_out,
-                        android.R.animator.fade_in,
-                        android.R.animator.fade_out).replace(R.id.nav_host_fragment, new AssignmentsFragment()).addToBackStack("FragmentAssignment").commit();
+                if (sharedPreferenceMethod.checkLogin()) {
+                    mListener.onFragmentInteraction("assignment");
+                    getFragmentManager().beginTransaction().setCustomAnimations(android.R.animator.fade_in,
+                            android.R.animator.fade_out,
+                            android.R.animator.fade_in,
+                            android.R.animator.fade_out).replace(R.id.nav_host_fragment, new AssignmentsFragment()).addToBackStack("FragmentAssignment").commit();
+
+                } else {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://megamindlearning.com/contact.html"));
+                    startActivity(browserIntent);
+                }
             }
         });
 

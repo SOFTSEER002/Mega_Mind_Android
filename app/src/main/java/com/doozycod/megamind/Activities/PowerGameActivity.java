@@ -104,7 +104,10 @@ public class PowerGameActivity extends AppCompatActivity {
             }
 
             public void onFinish() {
-                wl.release();
+                if (wl.isHeld()) {
+                    wl.release();
+                }
+
                 Intent intent = new Intent(PowerGameActivity.this, EnterAnswer.class);
                 intent.putExtra("random", getIntent().getIntExtra("random", 0));
                 intent.putExtra("startForm", getIntent().getStringExtra("startForm"));
