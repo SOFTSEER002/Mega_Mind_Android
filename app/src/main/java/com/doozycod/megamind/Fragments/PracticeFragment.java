@@ -44,7 +44,8 @@ import static com.doozycod.megamind.Activities.WrongActivity.PREFS_NAME;
 
 public class PracticeFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
-    Button additionButton, substractButton, getAssignmentButton, multipleButton, divisionButton, minusBtn, multipleBtn, divideBtn, startButton;
+    Button additionButton, substractButton, getAssignmentButton, multipleButton, divisionButton, minusBtn,
+            multipleBtn, divideBtn, startButton;
     ImageView speedUpbtn, speedDownBtn, addButtonPower, speedDownNoDigitBtn, speedDownBtnPower, addDigitButton, plusBtn, addButtonDivisor, speedDownBtnDivisor;
     TextView flickeringSpeedTextView, noOfDigitText, flickeringSpeedTextViewPower, levelNoTextView, digitSizeTxtDivisor,
             flickeringSpeedTextViewDivisor, digitNoTxtDivisor;

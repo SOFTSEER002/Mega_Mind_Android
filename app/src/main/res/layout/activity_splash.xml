@@ -24,7 +24,7 @@
         android:layout_alignParentBottom="true"
         android:gravity="center"
         android:orientation="vertical"
-        android:paddingBottom="30dp"
+        android:paddingBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"

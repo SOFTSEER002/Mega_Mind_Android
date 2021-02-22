@@ -361,7 +361,6 @@ public class CorrectActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     if (getIntent().hasExtra("assignmentAnswer")) {
-
                     intent.putExtra("practice", "answer");
                     startActivity(intent);
                     finishAffinity();

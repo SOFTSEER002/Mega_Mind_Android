@@ -46,6 +46,7 @@ import com.doozycod.megamind.Utils.SharedPreferenceMethod;
 import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -150,6 +151,25 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
             txtLogout.setVisibility(View.VISIBLE);
             imgLogout.setVisibility(View.VISIBLE);
             imgFeedback.setVisibility(View.VISIBLE);
+
+            getFragmentManager().beginTransaction().setCustomAnimations(android.R.animator.fade_in,
+                    android.R.animator.fade_out,
+                    android.R.animator.fade_in,
+                    android.R.animator.fade_out).replace(R.id.nav_host_fragment, new PracticeFragment()).addToBackStack("Practice").commit();
+
+        }else{
+            navigationView.setCheckedItem(R.id.practice);
+            navigationView.getHeaderView(0).findViewById(R.id.levelCheck).setVisibility(View.GONE);
+            navigationView.getMenu().findItem(R.id.nav_home).setVisible(true);
+            navigationView.getMenu().findItem(R.id.feedback1).setVisible(true);
+            navigationView.getMenu().findItem(R.id.practice).setVisible(true);
+            navigationView.getMenu().findItem(R.id.results).setVisible(true);
+//            navigationView.getMenu().findItem(R.id.logout).setVisible(true);
+            navigationView.getMenu().findItem(R.id.assignment).setVisible(false);
+            navigationView.getMenu().findItem(R.id.settings).setVisible(false);
+            navigationView.getMenu().findItem(R.id.feedback).setVisible(false);
+            navigationView.getMenu().findItem(R.id.logout).setVisible(false);
+            View headerView = navigationView.getHeaderView(0);
         }
 //        Interfaces
         new LoginFragment().setListener(this);
@@ -230,13 +250,14 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
                         android.R.animator.fade_in,
                         android.R.animator.fade_out).replace(R.id.nav_host_fragment, new PracticeFragment()).addToBackStack("Practice").commit();
                 return;
-
             }
             if (getIntent().hasExtra("assignmentReceived")) {
                 getFragmentManager().beginTransaction().setCustomAnimations(android.R.animator.fade_in,
                         android.R.animator.fade_out,
                         android.R.animator.fade_in,
                         android.R.animator.fade_out).replace(R.id.nav_host_fragment, new AssignmentsFragment()).addToBackStack("FragmentAssignment").commit();
+                return;
+
             }
             if (getIntent().hasExtra("result")) {
                 headText.setVisibility(View.GONE);
@@ -253,13 +274,28 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
                             android.R.animator.fade_in,
                             android.R.animator.fade_out).replace(R.id.nav_host_fragment, new ResultsFragment()).addToBackStack("practice").commit();
                 }
+                return;
 
             } else {
-                defaultFragment();
+//                defaultFragment();
             }
 //            Log.e(TAG, "onCreate: login");
         } else {
-            getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new PracticeFragment()).commit();
+            if (getIntent().hasExtra("result")) {
+                headText.setVisibility(View.GONE);
+                headText2.setVisibility(View.VISIBLE);
+                headText2.setText("Results");
+                getFragmentManager().beginTransaction().setCustomAnimations(android.R.animator.fade_in,
+                        android.R.animator.fade_out,
+                        android.R.animator.fade_in,
+                        android.R.animator.fade_out).replace(R.id.nav_host_fragment, new ResultsFragment()).addToBackStack("practice").commit();
+
+                return;
+
+            } else {
+                getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new PracticeFragment()).commit();
+
+            }
         }
 
         sharedPreferenceMethod.saveAssignmentTime(17);
@@ -362,7 +398,7 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
 
 //        } else {
         navigationView.setCheckedItem(R.id.practice);
-        getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new PracticeFragment(), "FragmentAssignment").commit();
+        getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new LoginFragment(), "FragmentAssignment").commit();
 //        }
 
     }
@@ -377,6 +413,8 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
             navigationView.getMenu().findItem(R.id.assignment).setVisible(true);
             navigationView.getMenu().findItem(R.id.results).setVisible(true);
             navigationView.getMenu().findItem(R.id.settings).setVisible(true);
+            navigationView.getMenu().findItem(R.id.feedback).setVisible(true);
+            navigationView.getMenu().findItem(R.id.logout).setVisible(true);
             txtLogout.setVisibility(View.VISIBLE);
             txtFeedback.setVisibility(View.VISIBLE);
             imgLogout.setVisibility(View.VISIBLE);
@@ -503,11 +541,10 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
                 if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
                     drawerLayout.closeDrawer(GravityCompat.START);
                 }
-                sharedPreferenceMethod.saveLogin(false);
                 if (databaseHelper != null) {
                     databaseHelper.deleteAll();
                 }
-
+                sharedPreferenceMethod.saveLogin(false);
                 //CLEAR THE STACK AFTER LOGGING OUT
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
@@ -532,6 +569,8 @@ public class MainNavigation extends AppCompatActivity implements Onloggedin,
                 navigationView.getMenu().findItem(R.id.assignment).setVisible(true);
                 navigationView.getMenu().findItem(R.id.results).setVisible(false);
                 navigationView.getMenu().findItem(R.id.settings).setVisible(false);
+                navigationView.getMenu().findItem(R.id.feedback).setVisible(false);
+                navigationView.getMenu().findItem(R.id.logout).setVisible(false);
                 txtLogout.setVisibility(View.GONE);
                 txtFeedback.setVisibility(View.GONE);
                 imgLogout.setVisibility(View.GONE);
